@@ -1,35 +1,22 @@
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+  State<SplashScreen> createState() => _SplashScreenState();
+}
 
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        height: size.height,
-        width: size.width,
-        decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [
-          Color.fromARGB(255, 235, 15, 70),
-          Color.fromARGB(255, 235, 15, 70),
-        ], begin: Alignment.centerLeft, end: Alignment.centerRight)),
-        child: Column(
-          children: [
-            SizedBox(
-              height: size.height / 50,
-            ),
-            Container(
-              height: size.height / 1.29,
-              width: size.width / 1.2,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("images/icon_splash.png"))),
-            )
-          ],
-        ),
+      backgroundColor: Color.fromARGB(255, 255, 33, 86),
+      body: Center(
+        child: Container(
+            width: 200,
+            height: 100,
+            child: Image.asset('assets/icon_splash.png')),
       ),
     );
   }

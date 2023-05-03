@@ -1,3 +1,5 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:blood_connect/screens/onboarding_one.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -11,12 +13,19 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 33, 86),
-      body: Center(
-        child: Container(
-            width: 200,
-            height: 100,
-            child: Image.asset('assets/icon_splash.png')),
+      backgroundColor: Colors.red[500],
+      body: Container(
+        decoration: BoxDecoration(color: Colors.red[400]),
+        child: AnimatedSplashScreen(
+          duration: 2000,
+          splash: Center(
+            child: Container(
+              child: Image.asset('assets/icon_splash.png'),
+            ),
+          ),
+          splashTransition: SplashTransition.fadeTransition,
+          nextScreen: OnBoarding(),
+        ),
       ),
     );
   }

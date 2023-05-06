@@ -1,4 +1,6 @@
+import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/screens/pages/login_screen.dart';
+import 'package:blood_connect/screens/pages/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingTwo extends StatelessWidget {
@@ -52,7 +54,7 @@ class OnBoardingTwo extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (builder) => LoginScreen(),
+                              builder: (builder) => const LoginScreen(),
                             ),
                           );
                         },
@@ -66,7 +68,12 @@ class OnBoardingTwo extends StatelessWidget {
                       child: SizedBox(
                         width: 300,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          style:
+                              ElevatedButton.styleFrom(primary: PrimaryColor),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (builder) => RegisterScreen()));
+                          },
                           child: const Text('REGISTER'),
                         ),
                       ),

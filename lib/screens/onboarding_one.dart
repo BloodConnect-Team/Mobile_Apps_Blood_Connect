@@ -12,25 +12,30 @@ class _OnBoardingState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('onboarding'),
-      ),
       body: SingleChildScrollView(
         child: Container(
+          margin: const EdgeInsets.all(25),
           child: Column(
             children: [
-              SizedBox(
-                height: 100,
+              Image.asset('assets/bro.png'),
+              const SizedBox(
+                height: 50,
               ),
-              Text('Find Blood Donors'),
-              SizedBox(
-                height: 30,
+              const Text(
+                'Find Blood Donors',
+                style: TextStyle(color: Colors.black),
               ),
-              Text(
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
                   'Lorem Ipsum dolor sit amet \n consectetur adipiscing elit. Arcu \n tristique tristique quam in.'),
+              const Card(
+                color: Colors.red,
+              ),
               Container(
-                margin: EdgeInsets.only(top: 400),
-                padding: EdgeInsets.only(right: 10),
+                margin: const EdgeInsets.only(top: 240),
+                padding: const EdgeInsets.only(right: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -39,10 +44,10 @@ class _OnBoardingState extends State<OnBoarding> {
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                                builder: (builder) => OnBoardingTwo()),
+                                builder: (builder) => const OnBoardingTwo()),
                           );
                         },
-                        child: Text(
+                        child: const Text(
                           'Next',
                           style: TextStyle(
                             fontSize: 17,

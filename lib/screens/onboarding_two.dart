@@ -1,3 +1,4 @@
+import 'package:blood_connect/screens/pages/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingTwo extends StatelessWidget {
@@ -8,19 +9,19 @@ class OnBoardingTwo extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.all(60),
+          margin: const EdgeInsets.all(60),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Container(
                 child: Image.asset('assets/icon_splash.png'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 'BloodConnect',
                 style: TextStyle(
                   fontSize: 20,
@@ -28,32 +29,33 @@ class OnBoardingTwo extends StatelessWidget {
                   color: Colors.red,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              Text(
+              const Text(
                 'Connected For Life',
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
                     decorationColor: Colors.black),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Container(
-                margin: EdgeInsets.only(top: 60),
+                margin: const EdgeInsets.only(top: 60),
                 child: Column(
                   children: [
-                    Container(
+                    SizedBox(
                       width: 300,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.red, width: 2.0),
-                          color: Colors.white,
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(10.0))),
                       child: OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (builder) => LoginScreen(),
+                            ),
+                          );
+                        },
                         child: const Text('LOG IN'),
                       ),
                     ),
@@ -61,7 +63,7 @@ class OnBoardingTwo extends StatelessWidget {
                       height: 10,
                     ),
                     GestureDetector(
-                      child: Container(
+                      child: SizedBox(
                         width: 300,
                         child: ElevatedButton(
                           onPressed: () {},

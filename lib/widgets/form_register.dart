@@ -30,7 +30,7 @@ class _FormRegisterState extends State<FormRegister> {
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 8),
                       child: Icon(
-                        Icons.key,
+                        Icons.person,
                         color: PrimaryColor,
                         size: 30,
                       ),
@@ -61,7 +61,7 @@ class _FormRegisterState extends State<FormRegister> {
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 8),
                       child: Icon(
-                        Icons.key,
+                        Icons.email,
                         color: PrimaryColor,
                       ),
                     ),
@@ -124,7 +124,7 @@ class _FormRegisterState extends State<FormRegister> {
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 8),
                       child: Icon(
-                        Icons.key,
+                        Icons.bloodtype,
                         color: PrimaryColor,
                         size: 30,
                       ),

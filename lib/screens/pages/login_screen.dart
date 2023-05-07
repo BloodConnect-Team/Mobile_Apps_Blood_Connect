@@ -58,7 +58,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 8),
                       child: Icon(
-                        Icons.email_outlined,
+                        Icons.email,
+                        color: PrimaryColor,
                       ),
                     ),
                   ),
@@ -87,6 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Container(
                       child: Icon(
                         Icons.key,
+                        color: PrimaryColor,
                       ),
                     ),
                   ),

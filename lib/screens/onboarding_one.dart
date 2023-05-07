@@ -39,6 +39,18 @@ class _OnBoardingState extends State<OnBoarding> {
               const SizedBox(
                 height: 10,
               ),
+              const Text('Lorem ipsum dolor sit met'),
+              const Text('consectetur adipicing elit.Arcu'),
+              const Text('tristique tristieus quam'),
+              SafeArea(
+                child: Card(
+                  elevation: 1,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  color: PrimaryColor,
+                ),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

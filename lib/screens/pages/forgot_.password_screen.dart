@@ -52,7 +52,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 8),
                       child: Icon(
-                        Icons.email_outlined,
+                        Icons.email,
+                        color: PrimaryColor,
                       ),
                     ),
                   ),

@@ -1,5 +1,6 @@
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/screens/onboarding_two.dart';
+import 'package:blood_connect/screens/second_screen.dart';
 import 'package:flutter/material.dart';
 
 class OnBoarding extends StatefulWidget {
@@ -42,14 +43,8 @@ class _OnBoardingState extends State<OnBoarding> {
               const Text('Lorem ipsum dolor sit met'),
               const Text('consectetur adipicing elit.Arcu'),
               const Text('tristique tristieus quam'),
-              SafeArea(
-                child: Card(
-                  elevation: 1,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  color: PrimaryColor,
-                ),
+              SizedBox(
+                height: 200,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -59,7 +54,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                              builder: (builder) => const OnBoardingTwo()),
+                              builder: (builder) => const SecondScreen()),
                         );
                       },
                       child: const Text(

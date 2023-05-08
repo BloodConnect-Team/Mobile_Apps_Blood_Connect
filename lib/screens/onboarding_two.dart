@@ -1,6 +1,7 @@
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/screens/pages/login_screen.dart';
 import 'package:blood_connect/screens/pages/register_screen.dart';
+import 'package:blood_connect/screens/second_screen.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingTwo extends StatelessWidget {
@@ -71,8 +72,10 @@ class OnBoardingTwo extends StatelessWidget {
                           style:
                               ElevatedButton.styleFrom(primary: PrimaryColor),
                           onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (builder) => RegisterScreen()));
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (context) {
+                              return SecondScreen();
+                            }));
                           },
                           child: const Text('REGISTER'),
                         ),

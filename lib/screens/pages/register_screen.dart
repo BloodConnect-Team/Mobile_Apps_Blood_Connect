@@ -25,7 +25,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   SizedBox(
                     height: 150,
                     width: 150,
-                    child: Image.asset('assets/icon_splash.png'),
+                    child: Image.asset('assets/img/icon_splash.png'),
                   ),
                   Text(
                     "Blood Connect",

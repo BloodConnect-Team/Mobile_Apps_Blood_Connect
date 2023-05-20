@@ -1,16 +1,15 @@
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/screens/onboarding_two.dart';
-import 'package:blood_connect/screens/second_screen.dart';
 import 'package:flutter/material.dart';
 
-class OnBoarding extends StatefulWidget {
-  const OnBoarding({super.key});
+class OnboardingOne extends StatefulWidget {
+  const OnboardingOne({super.key});
 
   @override
-  State<OnBoarding> createState() => _OnBoardingState();
+  State<OnboardingOne> createState() => _OnboardingOneState();
 }
 
-class _OnBoardingState extends State<OnBoarding> {
+class _OnboardingOneState extends State<OnboardingOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +23,7 @@ class _OnBoardingState extends State<OnBoarding> {
                 child: SizedBox(
                     width: 200,
                     height: 200,
-                    child: Image.asset('assets/bro.png')),
+                    child: Image.asset('assets/img/bro.png')),
               ),
               const SizedBox(
                 height: 50,
@@ -44,6 +43,29 @@ class _OnBoardingState extends State<OnBoarding> {
               const Text('consectetur adipicing elit.Arcu'),
               const Text('tristique tristieus quam'),
               SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 10,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        color: PrimaryColor,
+                        borderRadius: BorderRadius.circular(30)),
+                  ),
+                  Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                  Container(
+                    height: 10,
+                    width: 20,
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(30)),
+                  ),
+                ],
+              ),
+              SizedBox(
                 height: 200,
               ),
               Row(
@@ -54,7 +76,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                              builder: (builder) => const SecondScreen()),
+                              builder: (builder) => const OnboardingTwo()),
                         );
                       },
                       child: const Text(

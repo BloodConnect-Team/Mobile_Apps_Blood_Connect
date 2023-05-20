@@ -1,5 +1,6 @@
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/screens/pages/forgot_.password_screen.dart';
+import 'package:blood_connect/screens/pages/home_page_screen.dart';
 import 'package:blood_connect/screens/pages/register_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Container(
                 margin: const EdgeInsets.only(top: 70),
                 child: Image.asset(
-                  'assets/icon_splash.png',
+                  'assets/img/icon_splash.png',
                 ),
               ),
             ),
@@ -52,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     margin: EdgeInsets.only(right: 8),
                     decoration: BoxDecoration(
                       border: Border(
-                        right: BorderSide(color: Colors.black45),
+                        right: BorderSide(color: Colors.black54),
                       ),
                     ),
                     child: Container(
@@ -107,7 +108,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (buider) => HomePageScreen()));
+                },
                 child: Text(_login),
               ),
             ),

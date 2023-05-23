@@ -1,4 +1,5 @@
 import 'package:blood_connect/screens/onboarding_one.dart';
+import 'package:blood_connect/screens/pages/mainpage/stok_darah_screen.dart';
 import 'package:blood_connect/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const SplashScreen(),
+      home: StokDarahScreen(),
+      // const SplashScreen(),
+      initialRoute: '/',
       routes: {
         "onboardingOne": (context) => OnboardingOne(),
       },

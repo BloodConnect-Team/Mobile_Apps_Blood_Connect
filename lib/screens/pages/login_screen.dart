@@ -1,11 +1,14 @@
 import 'package:blood_connect/color/color.dart';
+import 'package:blood_connect/screens/pages/bottomnav/bottom_navigation.dart';
 import 'package:blood_connect/screens/pages/forgot_.password_screen.dart';
 import 'package:blood_connect/screens/pages/home_page_screen.dart';
 import 'package:blood_connect/screens/pages/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({
+    super.key,
+  });
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -13,11 +16,23 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _login = "LOG IN";
+  final _submitDataForm = GlobalKey<FormState>();
+  String _email = '';
+  String _password = '';
+  bool _isLogin = true;
+  void submitData() {
+    if (_submitDataForm.currentState != null) {
+      if (_submitDataForm.currentState!.validate()) {
+        _submitDataForm.currentState!.save();
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        key: _submitDataForm,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -44,6 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               width: 300,
               child: TextField(
+                key: Key('email'),
                 decoration: InputDecoration(
                   hintText: "Your email@gmail.com",
                   filled: true,
@@ -73,6 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               width: 300,
               child: TextField(
+                key: Key('password'),
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: "Password",
@@ -109,8 +126,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (buider) => HomePageScreen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (buider) => BottomNavigation()));
                 },
                 child: Text(_login),
               ),

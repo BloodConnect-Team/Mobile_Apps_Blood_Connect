@@ -15,23 +15,16 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            color: Colors.redAccent,
-            child: AnimatedSplashScreen(
-              splash: const AnimateSplas(),
-              nextScreen: const OnboardingOne(),
-              splashTransition: SplashTransition.rotationTransition,
-            ),
+      backgroundColor: PrimaryColor,
+      body: SafeArea(
+        child: Container(
+          color: Colors.redAccent,
+          child: AnimatedSplashScreen(
+            splash: const AnimateSplas(),
+            nextScreen: const OnboardingOne(),
+            splashTransition: SplashTransition.rotationTransition,
           ),
-          Text(
-            'Blood Connect',
-            style: TextStyle(
-                fontSize: 15, fontWeight: FontWeight.w300, color: PrimaryColor),
-          )
-        ],
+        ),
       ),
     );
   }

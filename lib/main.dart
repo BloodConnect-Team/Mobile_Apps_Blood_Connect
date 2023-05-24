@@ -18,8 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: StokDarahScreen(),
-      // const SplashScreen(),
+      home: const SplashScreen(),
+      //
+      //
       initialRoute: '/',
       routes: {
         "onboardingOne": (context) => OnboardingOne(),

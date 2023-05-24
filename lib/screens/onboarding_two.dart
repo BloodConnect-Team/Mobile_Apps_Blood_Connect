@@ -67,7 +67,7 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
                   ],
                 ),
                 SizedBox(
-                  height: 200,
+                  height: 180,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,

@@ -1,3 +1,4 @@
+import 'package:blood_connect/color/color.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -6,8 +7,10 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Search Screen'),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: 150,
+        color: PrimaryColor,
       ),
     );
   }

@@ -28,10 +28,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
     });
   }
 
-  // void _onItemPage(int i) {
-  //   _pageController.jumpToPage(i);
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

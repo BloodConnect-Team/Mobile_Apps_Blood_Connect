@@ -24,7 +24,9 @@ class NewsHomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.asset('assets/img/news.png'),
+                    Container(
+                        margin: EdgeInsets.all(5),
+                        child: Image.asset('assets/img/news.png')),
                     Text(
                       'UTD PMI Kota Medan',
                       style: TextStyle(fontSize: 10, fontFamily: 'Poppins'),
@@ -55,7 +57,9 @@ class NewsHomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.asset('assets/img/news.png'),
+                    Container(
+                        margin: EdgeInsets.all(5),
+                        child: Image.asset('assets/img/news.png')),
                     Text(
                       'UTD PMI Kota Medan',
                       style: TextStyle(fontSize: 10, fontFamily: 'Poppins'),
@@ -86,7 +90,9 @@ class NewsHomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.asset('assets/img/news.png'),
+                    Container(
+                        margin: EdgeInsets.all(5),
+                        child: Image.asset('assets/img/news.png')),
                     Text(
                       'UTD PMI Kota Medan',
                       style: TextStyle(fontSize: 10, fontFamily: 'Poppins'),

@@ -1,8 +1,7 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/screens/onboarding_one.dart';
-import 'package:blood_connect/widgets/animate_splas.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -11,21 +10,84 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controlAnimasi = AnimationController(
+    duration: Duration(seconds: 3),
+    vsync: this,
+  )..repeat();
+  late final Animation<double> _animation = CurvedAnimation(
+    parent: _controlAnimasi,
+    curve: Curves.fastOutSlowIn,
+  );
+  @override
+  void initState() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+    Future.delayed(const Duration(seconds: 6), () {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => OnboardingOne()));
+    });
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: PrimaryColor,
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Container(
-          color: Colors.redAccent,
-          child: AnimatedSplashScreen(
-            splash: const AnimateSplas(),
-            nextScreen: const OnboardingOne(),
-            splashTransition: SplashTransition.rotationTransition,
+          width: double.infinity,
+          decoration: BoxDecoration(color: PrimaryColor),
+          child: Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 150,
+                ),
+                Center(
+                  child: SizeTransition(
+                    sizeFactor: _animation,
+                    axis: Axis.horizontal,
+                    axisAlignment: -1,
+                    child: Image.asset('assets/img/icon_splash.png'),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  'Blood Connect',
+                  style: TextStyle(
+                      fontFamily: 'Poppins', fontSize: 25, color: Colors.white),
+                ),
+                Container(
+                    padding: const EdgeInsets.only(top: 127),
+                    child: Image.asset('assets/img/style_splash.png')),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+
+
+
+// Container(
+//         color: Colors.redAccent,
+//         child: AnimatedSplashScreen(
+//           splash: const AnimateSplas(),
+//           animationDuration: Duration(milliseconds: 100),
+//           nextScreen: const OnboardingOne(),
+//           splashTransition: SplashTransition.rotationTransition,
+//         ),
+//       ),

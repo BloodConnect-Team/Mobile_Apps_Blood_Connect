@@ -19,7 +19,7 @@ class _FormRegisterState extends State<FormRegister> {
             width: 300,
             child: TextField(
               decoration: InputDecoration(
-                  hintText: "Fajar Rivaldi",
+                  hintText: "Username",
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   prefixIcon: Container(
@@ -48,28 +48,34 @@ class _FormRegisterState extends State<FormRegister> {
           margin: EdgeInsets.all(10),
           child: SizedBox(
             width: 300,
-            child: TextField(
+            child: TextFormField(
               decoration: InputDecoration(
-                  hintText: "Your Email",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  prefixIcon: Container(
-                    margin: EdgeInsets.only(right: 8),
-                    decoration: BoxDecoration(
-                      border: Border(right: BorderSide(color: Colors.black45)),
-                    ),
-                    child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 8),
-                      child: Icon(
-                        Icons.email,
-                        color: PrimaryColor,
-                      ),
+                hintText: "Your Email",
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                prefixIcon: Container(
+                  margin: EdgeInsets.only(right: 8),
+                  decoration: BoxDecoration(
+                    border: Border(right: BorderSide(color: Colors.black45)),
+                  ),
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 8),
+                    child: Icon(
+                      Icons.email,
+                      color: PrimaryColor,
                     ),
                   ),
-                  prefix: VerticalDivider(
-                    width: 10,
-                    color: Colors.amber,
-                  )),
+                ),
+                prefix: const VerticalDivider(
+                  width: 10,
+                  color: Colors.amber,
+                ),
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty || value.contains('@'))
+                  return 'Mohon Masukkan Email Anda';
+                return null;
+              },
             ),
           ),
         ),
@@ -79,18 +85,19 @@ class _FormRegisterState extends State<FormRegister> {
           child: SizedBox(
             width: 300,
             child: TextField(
+              obscureText: true,
               decoration: InputDecoration(
                   hintText: "********",
                   filled: true,
-                  border: OutlineInputBorder(
+                  border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   prefixIcon: Container(
-                    margin: EdgeInsets.only(right: 8),
-                    decoration: BoxDecoration(
+                    margin: const EdgeInsets.only(right: 8),
+                    decoration: const BoxDecoration(
                       border: Border(right: BorderSide(color: Colors.black45)),
                     ),
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 8),
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
                       child: Icon(
                         Icons.key,
                         color: PrimaryColor,
@@ -98,7 +105,7 @@ class _FormRegisterState extends State<FormRegister> {
                       ),
                     ),
                   ),
-                  prefix: VerticalDivider(
+                  prefix: const VerticalDivider(
                     width: 10,
                     color: Colors.amber,
                   )),
@@ -107,22 +114,22 @@ class _FormRegisterState extends State<FormRegister> {
         ),
         //Form Golongan Darah User
         Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           child: SizedBox(
             width: 300,
             child: TextField(
               decoration: InputDecoration(
                   hintText: "O+",
                   filled: true,
-                  border: OutlineInputBorder(
+                  border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   prefixIcon: Container(
-                    margin: EdgeInsets.only(right: 8),
-                    decoration: BoxDecoration(
+                    margin: const EdgeInsets.only(right: 8),
+                    decoration: const BoxDecoration(
                       border: Border(right: BorderSide(color: Colors.black45)),
                     ),
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 8),
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
                       child: Icon(
                         Icons.bloodtype,
                         color: PrimaryColor,

@@ -1,8 +1,5 @@
 import 'dart:math';
-import 'package:blood_connect/color/color.dart';
 import 'package:flutter/material.dart';
-import 'package:getwidget/components/avatar/gf_avatar.dart';
-import 'package:getwidget/getwidget.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -70,100 +67,98 @@ class ProfileScreen extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          Card(
-            margin: EdgeInsets.all(10),
-            elevation: 2,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 30,
-                    height: 30,
-                    child: Image.asset('assets/icons/setting_icon.png'),
-                  ),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
-                  Text(
-                    'Setting',
-                    style: TextStyle(fontSize: 19, color: Colors.black),
-                  )
-                ],
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 2,
-          ),
-          Card(
-            margin: EdgeInsets.all(10),
-            elevation: 2,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 30,
-                    height: 30,
-                    child: Image.asset('assets/icons/privacy_icon.png'),
-                  ),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
-                  Text(
-                    'Privacy Policy',
-                    style: TextStyle(fontSize: 19, color: Colors.black),
-                  )
-                ],
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 2,
-          ),
-          Card(
-            margin: EdgeInsets.all(10),
-            elevation: 2,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 30,
-                    height: 30,
-                    child: Image.asset('assets/icons/help_icon.png'),
-                  ),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
-                  Text(
-                    'Get Help',
-                    style: TextStyle(fontSize: 19, color: Colors.black),
-                  )
-                ],
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 2,
-          ),
-          GestureDetector(
-            onTap: () {},
-            child: Card(
-              margin: EdgeInsets.all(10),
-              elevation: 2,
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 30,
-                      height: 30,
-                      child: Image.asset('assets/icons/sigout_icon.png'),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 30,
+                          height: 30,
+                          child: Image.asset('assets/icons/setting_icon.png'),
+                        ),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                        Text(
+                          'Setting',
+                          style: TextStyle(fontSize: 19, color: Colors.black),
+                        )
+                      ],
                     ),
-                    Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
-                    Text(
-                      'Sign Out',
-                      style: TextStyle(fontSize: 19, color: Colors.black),
-                    )
-                  ],
+                  ),
                 ),
-              ),
+                SizedBox(
+                  height: 20,
+                ),
+                GestureDetector(
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 30,
+                          height: 30,
+                          child: Image.asset('assets/icons/privacy_icon.png'),
+                        ),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                        Text(
+                          'Privacy Policy',
+                          style: TextStyle(fontSize: 19, color: Colors.black),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                GestureDetector(
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 30,
+                          height: 30,
+                          child: Image.asset('assets/icons/help_icon.png'),
+                        ),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                        Text(
+                          'Get Help',
+                          style: TextStyle(fontSize: 19, color: Colors.black),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 30,
+                          height: 30,
+                          child: Image.asset('assets/icons/sigout_icon.png'),
+                        ),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                        Text(
+                          'Sign Out',
+                          style: TextStyle(fontSize: 19, color: Colors.black),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],

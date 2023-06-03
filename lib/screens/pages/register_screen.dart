@@ -41,12 +41,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             //Form input username register
-            FormRegister(),
-            SizedBox(
+            const FormRegister(),
+            const SizedBox(
               height: 50,
             ),
             //Button Register

@@ -6,10 +6,6 @@ class AnimateSplas extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      height: 100,
-      child: Image.asset('assets/img/icon_splash.png'),
-    );
+    return Placeholder();
   }
 }

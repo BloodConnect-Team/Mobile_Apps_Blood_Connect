@@ -51,12 +51,14 @@ class OnboardingTree extends StatelessWidget {
                     SizedBox(
                       width: 300,
                       child: OutlinedButton(
+                        style: ButtonStyle(
+                            side: MaterialStateProperty.all(
+                                BorderSide(color: PrimaryColor, width: 3))),
                         onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (builder) => const LoginScreen(),
-                            ),
-                          );
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (builder) => LoginScreen()));
                         },
                         child: const Text('LOG IN'),
                       ),

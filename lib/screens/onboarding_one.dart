@@ -19,7 +19,7 @@ class _OnboardingOneState extends State<OnboardingOne> {
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 100),
+                margin: const EdgeInsets.only(top: 100),
                 child: SizedBox(
                     width: 200,
                     height: 200,
@@ -42,7 +42,7 @@ class _OnboardingOneState extends State<OnboardingOne> {
               const Text('Lorem ipsum dolor sit met'),
               const Text('consectetur adipicing elit.Arcu'),
               const Text('tristique tristieus quam'),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -55,7 +55,7 @@ class _OnboardingOneState extends State<OnboardingOne> {
                         color: PrimaryColor,
                         borderRadius: BorderRadius.circular(30)),
                   ),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                  const Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
                   Container(
                     height: 10,
                     width: 20,
@@ -65,8 +65,8 @@ class _OnboardingOneState extends State<OnboardingOne> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 200,
+              const SizedBox(
+                height: 250,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -74,10 +74,10 @@ class _OnboardingOneState extends State<OnboardingOne> {
                   Positioned(
                     child: TextButton(
                       onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (builder) => const OnboardingTwo()),
-                        );
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const OnboardingTwo()));
                       },
                       child: const Text(
                         'Next',

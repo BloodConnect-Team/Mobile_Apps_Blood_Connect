@@ -3,8 +3,6 @@ import 'package:blood_connect/screens/pages/bottomnav/bottom_navigation.dart';
 import 'package:blood_connect/screens/pages/forgot_.password_screen.dart';
 import 'package:blood_connect/screens/pages/register_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:http/http.dart' as http;
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({
@@ -22,11 +20,9 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _login = "LOG IN";
   final _submitDataForm = GlobalKey<FormState>();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
 
   bool isLogin = false;
-  String _username = '';
+
   String _password = '';
   String _email = '';
 
@@ -40,17 +36,17 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  String? get _errorText {
-    final text = passwordController.value.text;
-    if (text.isNotEmpty) {
-      return 'Password Tidak Boleh Kosong';
-    } else {
-      if (text.length < 6) {
-        return 'Password Harus Lebih Dari enam';
-      }
-    }
-    return null;
-  }
+  // String? get _errorText {
+  //   final text = .value.text;
+  //   if (text.isNotEmpty) {
+  //     return 'Password Tidak Boleh Kosong';
+  //   } else {
+  //     if (text.length < 6) {
+  //       return 'Password Harus Lebih Dari enam';
+  //     }
+  //   }
+  //   return null;
+  // }
 
   bool _PasswordVisible = true;
   @override
@@ -59,9 +55,9 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
   }
 
-  void submit() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (buider) => BottomNavigation()));
+  void submitToHome() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (buider) => const BottomNavigation()));
   }
 
   @override
@@ -98,7 +94,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       width: 300,
                       child: TextFormField(
-                        controller: emailController,
                         decoration: InputDecoration(
                           hintText: "Your email@gmail.com",
                           filled: true,
@@ -118,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               margin: EdgeInsets.symmetric(horizontal: 8),
                               child: Icon(
                                 Icons.email,
-                                color: PrimaryColor,
+                                color: primaryColor,
                               ),
                             ),
                           ),
@@ -126,8 +121,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         validator: (value) {
                           if (value == null ||
                               value.isEmpty ||
-                              !value.contains('@'))
+                              !value.contains('@')) {
                             return 'Mohon Masukkan Format Email yang Benar';
+                          }
                           return null;
                         },
                         onSaved: (value) {
@@ -162,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               )),
                           prefixIcon: Container(
                             margin: EdgeInsets.only(right: 8),
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               border: Border(
                                 right: BorderSide(color: Colors.black),
                               ),
@@ -170,7 +166,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: Container(
                               child: Icon(
                                 Icons.key,
-                                color: PrimaryColor,
+                                color: primaryColor,
                               ),
                             ),
                           ),
@@ -196,23 +192,25 @@ class _LoginScreenState extends State<LoginScreen> {
               width: 250,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: PrimaryColor,
+                  primary: primaryColor,
                   elevation: 2,
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  submitToHome();
+                },
                 child: Text(_login),
               ),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (builder) => ForgotPasswordScreen()));
+                    builder: (builder) => const ForgotPasswordScreen()));
               },
               child: Text(
                 'Forgot Password?',
-                style: TextStyle(fontSize: 15, color: PrimaryColor),
+                style: TextStyle(fontSize: 15, color: primaryColor),
               ),
             ),
             Container(
@@ -220,15 +218,15 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Don't have an account?"),
+                  const Text("Don't have an account?"),
                   TextButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (builder) => RegisterScreen()));
+                          builder: (builder) => const RegisterScreen()));
                     },
                     child: Text(
                       'Register Now',
-                      style: TextStyle(color: PrimaryColor),
+                      style: TextStyle(color: primaryColor),
                     ),
                   )
                 ],

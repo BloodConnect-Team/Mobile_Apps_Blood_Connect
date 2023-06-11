@@ -1,4 +1,3 @@
-import 'package:blood_connect/color/color.dart';
 import 'package:flutter/material.dart';
 
 class AnimateSplas extends StatelessWidget {
@@ -6,6 +5,6 @@ class AnimateSplas extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return const Placeholder();
   }
 }

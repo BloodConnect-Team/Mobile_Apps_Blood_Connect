@@ -11,7 +11,6 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   var _clearSearch = TextEditingController();
-  bool _changeColor = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +18,7 @@ class _SearchScreenState extends State<SearchScreen> {
         width: MediaQuery.of(context).size.width,
         height: 230,
         decoration: BoxDecoration(
-          color: PrimaryColor,
+          color: primaryColor,
           boxShadow: [
             BoxShadow(
               color: Colors.grey,

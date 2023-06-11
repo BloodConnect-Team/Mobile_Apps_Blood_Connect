@@ -7,7 +7,13 @@ class MobileUnitScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mobile Unit'),
+        leading: const BackButton(color: Colors.black),
+        centerTitle: true,
+        title: const Text(
+          'Mobile Unit',
+          style: TextStyle(fontSize: 17, color: Colors.black),
+        ),
+        backgroundColor: Colors.white,
       ),
     );
   }

@@ -1,5 +1,4 @@
 import 'package:blood_connect/color/color.dart';
-import 'package:blood_connect/model/faq_donor.dart';
 import 'package:flutter/material.dart';
 
 class ListPathList extends StatelessWidget {
@@ -12,7 +11,7 @@ class ListPathList extends StatelessWidget {
           minHeight: 50,
           maxHeight: 100,
           child: Container(
-            color: PrimaryColor,
+            color: primaryColor,
             child: Center(
               child: Text(
                 text,
@@ -61,16 +60,4 @@ class SliverBarFaq extends SliverPersistentHeaderDelegate {
         minHeight != oldDelegate.minHeight ||
         child != oldDelegate.child;
   }
-}
-
-Widget _buildListTile(FaqDonor faqDonor) {
-  return const ListTile(
-    title: Text(""),
-    subtitle: Text(
-      "",
-      overflow: TextOverflow.fade,
-      maxLines: null,
-    ),
-    isThreeLine: true,
-  );
 }

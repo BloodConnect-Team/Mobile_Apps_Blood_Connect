@@ -1,11 +1,15 @@
 import 'package:blood_connect/screens/onboarding_one.dart';
 import 'package:blood_connect/screens/pages/login_screen.dart';
-import 'package:blood_connect/screens/pages/mainpage/stok_darah_screen.dart';
+import 'package:blood_connect/screens/pages/register_screen.dart';
 import 'package:blood_connect/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    // MultiProvider(
+    // providers: [ChangeNotifierProvider(create: (_) => DataUser())],
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,12 +22,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      // home: PageSatu(),
       home: const SplashScreen(),
-      //
+
       //
       initialRoute: '/',
       routes: {
-        "onboardingOne": (context) => OnboardingOne(),
+        '/registerScreen': (context) => const RegisterScreen(),
+        '/LoginScreen': (context) => const LoginScreen(),
+        '/OnBoardingTwo': (context) => const OnboardingTwo(),
       },
     );
   }

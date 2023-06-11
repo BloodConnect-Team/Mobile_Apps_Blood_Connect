@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -14,9 +13,10 @@ class ProfileScreen extends StatelessWidget {
             height: 250,
             decoration: BoxDecoration(
               color: Colors.red[400],
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+              borderRadius:
+                  const BorderRadius.vertical(bottom: Radius.circular(20)),
             ),
-            child: Expanded(
+            child: const Expanded(
               child: Column(children: [
                 SizedBox(
                   height: 40,
@@ -64,11 +64,11 @@ class ProfileScreen extends StatelessWidget {
               ]),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 30),
+            margin: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -82,8 +82,9 @@ class ProfileScreen extends StatelessWidget {
                           height: 30,
                           child: Image.asset('assets/icons/setting_icon.png'),
                         ),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
-                        Text(
+                        const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10)),
+                        const Text(
                           'Setting',
                           style: TextStyle(fontSize: 19, color: Colors.black),
                         )
@@ -91,7 +92,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 GestureDetector(
@@ -104,8 +105,9 @@ class ProfileScreen extends StatelessWidget {
                           height: 30,
                           child: Image.asset('assets/icons/privacy_icon.png'),
                         ),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
-                        Text(
+                        const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10)),
+                        const Text(
                           'Privacy Policy',
                           style: TextStyle(fontSize: 19, color: Colors.black),
                         )
@@ -113,7 +115,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 GestureDetector(
@@ -126,8 +128,9 @@ class ProfileScreen extends StatelessWidget {
                           height: 30,
                           child: Image.asset('assets/icons/help_icon.png'),
                         ),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
-                        Text(
+                        const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10)),
+                        const Text(
                           'Get Help',
                           style: TextStyle(fontSize: 19, color: Colors.black),
                         )
@@ -135,7 +138,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 GestureDetector(
@@ -149,8 +152,9 @@ class ProfileScreen extends StatelessWidget {
                           height: 30,
                           child: Image.asset('assets/icons/sigout_icon.png'),
                         ),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
-                        Text(
+                        const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10)),
+                        const Text(
                           'Sign Out',
                           style: TextStyle(fontSize: 19, color: Colors.black),
                         )

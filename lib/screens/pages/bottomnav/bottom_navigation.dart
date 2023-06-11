@@ -16,10 +16,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int _selectedBottom = 0;
 
   final List<Widget> _listPage = [
-    HomePageScreen(),
-    SearchScreen(),
-    BloodScreen(),
-    ProfileScreen()
+    const HomePageScreen(),
+    const SearchScreen(),
+    const BloodScreen(),
+    const ProfileScreen()
   ];
 
   void onItemTap(int index) {
@@ -33,14 +33,16 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       body: _listPage[_selectedBottom],
       bottomNavigationBar: BottomNavigationBar(
-        unselectedIconTheme: IconThemeData(
+        unselectedIconTheme: const IconThemeData(
           color: Colors.blueGrey,
         ),
         unselectedItemColor: Colors.grey,
-        iconSize: 25,
+        iconSize: 30,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(
+              Icons.home,
+            ),
             label: "Home",
           ),
           BottomNavigationBarItem(
@@ -53,7 +55,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           BottomNavigationBarItem(
               icon: Icon(Icons.person_outline_outlined), label: "Profil")
         ],
-        selectedItemColor: PrimaryColor,
+        selectedItemColor: primaryColor,
         onTap: onItemTap,
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedBottom,

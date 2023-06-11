@@ -1,14 +1,9 @@
 import 'package:blood_connect/color/color.dart';
 import 'package:flutter/material.dart';
 
-class ForgotPasswordScreen extends StatefulWidget {
+class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
 
-  @override
-  State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
-}
-
-class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,30 +25,30 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 fontWeight: FontWeight.w500,
                 color: Color(0xffFF2156)),
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           Container(
-            padding: EdgeInsets.only(left: 30),
+            padding: const EdgeInsets.only(left: 30),
             child: SizedBox(
               width: 300,
               child: TextField(
                 decoration: InputDecoration(
                   hintText: "Your email@gmail.com",
-                  border: OutlineInputBorder(
+                  border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   prefixIcon: Container(
-                    margin: EdgeInsets.only(right: 8),
-                    decoration: BoxDecoration(
+                    margin: const EdgeInsets.only(right: 8),
+                    decoration: const BoxDecoration(
                       border: Border(
                         right: BorderSide(color: Colors.black45),
                       ),
                     ),
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 8),
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
                       child: Icon(
                         Icons.email,
-                        color: PrimaryColor,
+                        color: primaryColor,
                       ),
                     ),
                   ),
@@ -61,18 +56,18 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          Text(
+          const Text(
             "Your Password reset will be send in your",
             style: TextStyle(fontSize: 15, color: Colors.black54),
           ),
-          Text(
+          const Text(
             "Registered email address.",
             style: TextStyle(fontSize: 15, color: Colors.black54),
           ),
-          SizedBox(
+          const SizedBox(
             height: 70,
           ),
           SizedBox(
@@ -93,7 +88,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             },
             child: Text(
               "Sign In",
-              style: TextStyle(fontSize: 15, color: PrimaryColor),
+              style: TextStyle(fontSize: 15, color: primaryColor),
             ),
           )
         ],

@@ -13,7 +13,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controlAnimasi = AnimationController(
-    duration: Duration(seconds: 3),
+    duration: const Duration(seconds: 3),
     vsync: this,
   )..repeat();
   late final Animation<double> _animation = CurvedAnimation(
@@ -23,11 +23,10 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(const Duration(seconds: 6), () {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => OnboardingOne()));
+    Future.delayed(const Duration(seconds: 5), () {
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (_) => const OnboardingOne()));
     });
-
     super.initState();
   }
 
@@ -35,6 +34,8 @@ class _SplashScreenState extends State<SplashScreen>
   void dispose() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: SystemUiOverlay.values);
+
+    _controlAnimasi.dispose();
     super.dispose();
   }
 
@@ -44,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen>
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
-          decoration: BoxDecoration(color: PrimaryColor),
+          decoration: BoxDecoration(color: primaryColor),
           child: Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -79,15 +80,3 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 }
-
-
-
-// Container(
-//         color: Colors.redAccent,
-//         child: AnimatedSplashScreen(
-//           splash: const AnimateSplas(),
-//           animationDuration: Duration(milliseconds: 100),
-//           nextScreen: const OnboardingOne(),
-//           splashTransition: SplashTransition.rotationTransition,
-//         ),
-//       ),

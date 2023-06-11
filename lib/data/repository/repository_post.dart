@@ -27,4 +27,27 @@ class RepositoryPost {
       throw Exception(e);
     }
   }
+
+  Future PostDataLogin(String email, String password) async {
+    final _baseUrlToLogin =
+        Uri.parse('https://api.bloodconnect.social/api/auth/login');
+    final Map<String, dynamic> requestLogin = {
+      'email': email,
+      'password': password
+    };
+    try {
+      final response = await http.post(
+        _baseUrlToLogin,
+        body: requestLogin,
+      );
+
+      if (response.statusCode == 200) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
 }

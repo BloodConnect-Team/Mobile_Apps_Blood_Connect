@@ -71,9 +71,3 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 }
-
-Widget _cardComponent(BuildContext context) {
-  return const CustomScrollView(
-    slivers: [],
-  );
-}

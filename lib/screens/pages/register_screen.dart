@@ -34,7 +34,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   Future snackbarRegister() {
-    return Future.delayed(const Duration(seconds: 1), () {
+    return Future.delayed(const Duration(seconds: 0), () {
       return const SnackBar(
         content: Center(child: Text('Selamat Anda Sudah Register')),
         backgroundColor: Colors.redAccent,
@@ -276,15 +276,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       borderRadius: BorderRadius.circular(10)),
                 ),
                 onPressed: () async {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return const Center(child: CircularProgressIndicator());
+                      });
+
                   bool response = await repository.posDataRegister(
                       nameController.text,
                       emailController.text,
                       passwordController.text,
                       goldarController.text);
-
                   if (response) {
+                    Navigator.of(context).popAndPushNamed('/LoginScreen');
+
                     snackbarRegister();
-                    _getWidgetDialog(context);
                   } else {
                     const SnackBar(
                       content: Center(

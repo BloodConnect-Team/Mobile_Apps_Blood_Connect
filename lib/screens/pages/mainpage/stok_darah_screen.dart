@@ -81,6 +81,7 @@ class StokDarahScreen extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
+          GridView.count(crossAxisCount: 3)
         ],
       ),
     );

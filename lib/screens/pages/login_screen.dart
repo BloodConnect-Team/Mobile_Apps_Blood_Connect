@@ -1,4 +1,5 @@
 import 'package:blood_connect/color/color.dart';
+import 'package:blood_connect/data/repository/repository_post.dart';
 import 'package:blood_connect/screens/pages/bottomnav/bottom_navigation.dart';
 import 'package:blood_connect/screens/pages/forgot_.password_screen.dart';
 import 'package:blood_connect/screens/pages/register_screen.dart';
@@ -20,12 +21,12 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _login = "LOG IN";
   final _submitDataForm = GlobalKey<FormState>();
-
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   bool isLogin = false;
-
   String _password = '';
   String _email = '';
-
+  RepositoryPost repositoryLogin = RepositoryPost();
   void submitData() {
     if (_submitDataForm.currentState != null) {
       if (_submitDataForm.currentState!.validate()) {
@@ -35,18 +36,6 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     }
   }
-
-  // String? get _errorText {
-  //   final text = .value.text;
-  //   if (text.isNotEmpty) {
-  //     return 'Password Tidak Boleh Kosong';
-  //   } else {
-  //     if (text.length < 6) {
-  //       return 'Password Harus Lebih Dari enam';
-  //     }
-  //   }
-  //   return null;
-  // }
 
   bool _PasswordVisible = true;
   @override
@@ -58,6 +47,13 @@ class _LoginScreenState extends State<LoginScreen> {
   void submitToHome() {
     Navigator.push(context,
         MaterialPageRoute(builder: (buider) => const BottomNavigation()));
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 
   @override
@@ -94,6 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       width: 300,
                       child: TextFormField(
+                        controller: emailController,
                         decoration: InputDecoration(
                           hintText: "Your email@gmail.com",
                           filled: true,
@@ -138,6 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       width: 300,
                       child: TextFormField(
                         key: Key('password'),
+                        controller: passwordController,
                         obscureText: !_PasswordVisible,
                         decoration: InputDecoration(
                           hintText: "Password",
@@ -197,8 +195,32 @@ class _LoginScreenState extends State<LoginScreen> {
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
-                onPressed: () {
-                  submitToHome();
+                onPressed: () async {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      });
+                  bool responseLogin = await repositoryLogin.PostDataLogin(
+                    emailController.text,
+                    passwordController.text,
+                  );
+                  if (responseLogin == true) {
+                    submitToHome();
+                  } else {
+                    const SnackBar(
+                      content: Center(
+                        child: Text("Anda Gagal Login"),
+                      ),
+                      backgroundColor: Colors.redAccent,
+                      duration: Duration(seconds: 2),
+                      behavior: SnackBarBehavior.floating,
+                      margin: EdgeInsets.all(40),
+                      elevation: 10,
+                    );
+                  }
                 },
                 child: Text(_login),
               ),

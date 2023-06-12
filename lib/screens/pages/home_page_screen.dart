@@ -236,3 +236,18 @@ class _HomePageScreenState extends State<HomePageScreen> {
     );
   }
 }
+
+Widget _listFaq() {
+  return CustomScrollView(
+    slivers: [
+      SliverList(delegate: SliverChildBuilderDelegate((context, index) {
+        return Container(
+          height: 30,
+          margin: const EdgeInsets.all(20),
+          decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10))),
+        );
+      }))
+    ],
+  );
+}

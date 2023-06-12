@@ -9,11 +9,6 @@ class LoginScreen extends StatefulWidget {
   const LoginScreen({
     Key? key,
   }) : super(key: key);
-  // final Function(
-  //     {required String username,
-  //     required String password,
-  //     required String email,
-  //     required bool isLogin}) submitAuthForm;
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
@@ -207,7 +202,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     emailController.text,
                     passwordController.text,
                   );
-                  if (responseLogin == true) {
+                  if (responseLogin) {
                     submitToHome();
                   } else {
                     const SnackBar(

@@ -2,7 +2,6 @@ import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/data/repository/repository_post.dart';
 import 'package:blood_connect/screens/pages/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -13,7 +12,6 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   bool _isPossiblePassword = true;
-  final _formKeyRegister = GlobalKey<FormState>();
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();

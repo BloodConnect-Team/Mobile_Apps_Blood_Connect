@@ -42,12 +42,12 @@ class _StokDarahScreenState extends State<StokDarahScreen> {
                         ),
                       ),
                       Padding(
-                          padding: EdgeInsets.only(right: 155.0, bottom: 5.0),
-                          child: Text(
-                            'Provinsi Aceh',
-                            style:
-                                TextStyle(fontSize: 14, color: Colors.black87),
-                          )),
+                        padding: EdgeInsets.only(right: 155.0, bottom: 5.0),
+                        child: Text(
+                          'Provinsi Aceh',
+                          style: TextStyle(fontSize: 14, color: Colors.black87),
+                        ),
+                      ),
                       Padding(
                         padding: EdgeInsets.only(right: 100.0, bottom: 5.0),
                         child: Text(

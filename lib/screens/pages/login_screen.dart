@@ -26,8 +26,6 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_submitDataForm.currentState != null) {
       if (_submitDataForm.currentState!.validate()) {
         _submitDataForm.currentState!.save();
-
-        print('_email $_email');
       }
     }
   }

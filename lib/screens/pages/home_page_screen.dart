@@ -1,5 +1,6 @@
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/screens/pages/mainpage/mobile_unit_screen.dart';
+import 'package:blood_connect/screens/pages/mainpage/notification_screen.dart';
 import 'package:blood_connect/screens/pages/mainpage/stok_darah_screen.dart';
 import 'package:blood_connect/widgets/news_home_page.dart';
 import 'package:flutter/material.dart';
@@ -79,17 +80,24 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                   ],
                                 ),
                               ),
-                              Container(
-                                  width: 40,
-                                  height: 40,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(6)),
-                                  child: Icon(
-                                    Icons.notifications_none_outlined,
-                                    color: primaryColor,
-                                    size: 30,
-                                  ))
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (builder) =>
+                                          NotificationScreen()));
+                                },
+                                child: Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(6)),
+                                    child: Icon(
+                                      Icons.notifications_none_outlined,
+                                      color: primaryColor,
+                                      size: 30,
+                                    )),
+                              )
                             ],
                           ),
                         ),
@@ -139,7 +147,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             "assets/img/icon2.png",
                             height: 50,
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -183,7 +191,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             "assets/img/icon3.png",
                             height: 50,
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -211,20 +219,22 @@ class _HomePageScreenState extends State<HomePageScreen> {
             ),
           ),
           const Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
             child: Text(
-              "NEWS",
+              "Berita dan Artikel",
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 17),
             ),
           ),
-          const NewsHomePage(),
+          const NewsHomePage(
+            
+          ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
             child: Text(
-              'FAQ',
+              'Pertanyaan Umum',
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,

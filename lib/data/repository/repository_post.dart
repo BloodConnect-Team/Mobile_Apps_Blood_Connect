@@ -36,12 +36,31 @@ class RepositoryPost {
       'password': password
     };
     try {
-      final response = await http.post(
+      final responseLogin = await http.post(
         _baseUrlToLogin,
         body: requestLogin,
       );
 
-      if (response.statusCode == 200) {
+      if (responseLogin.statusCode == 200) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
+
+  Future postForgotPassword(String email) async {
+    final _baseUrlForgotPassword =
+        Uri.parse('https://api.bloodconnect.social/api/auth/forget');
+    final Map<String, dynamic> requestForgotPassword = {
+      'email': email,
+    };
+    try {
+      final resonsePassword =
+          await http.post(_baseUrlForgotPassword, body: requestForgotPassword);
+      if (resonsePassword.statusCode == 200) {
         return true;
       } else {
         return false;

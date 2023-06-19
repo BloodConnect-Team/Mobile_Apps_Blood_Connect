@@ -33,7 +33,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       body: _listPage[_selectedBottom],
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(vertical: 5),
         child: GNav(
             gap: 5,
             tabBorderRadius: 30,

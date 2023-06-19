@@ -11,11 +11,12 @@ class _MobileUnitScreenState extends State<MobileUnitScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         leading: const BackButton(color: Colors.black),
         centerTitle: true,
         title: const Text(
-          'Mobile Unit',
+          'Mobil Unit',
           style: TextStyle(fontSize: 17, color: Colors.black),
         ),
         backgroundColor: Colors.white,
@@ -32,7 +33,7 @@ class _MobileUnitScreenState extends State<MobileUnitScreen> {
                     suffixIcon: IconButton(
                         onPressed: () {}, icon: const Icon(Icons.search)),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0))),
+                        borderRadius: BorderRadius.circular(10.0))),
               ),
             ),
           ),
@@ -50,14 +51,9 @@ class _MobileUnitScreenState extends State<MobileUnitScreen> {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Container(
               width: double.infinity,
-              decoration: const BoxDecoration(boxShadow: [
-                BoxShadow(
-                  color: Color(0xffDDDDDD),
-                  blurRadius: 6.0,
-                  spreadRadius: 2.0,
-                  offset: Offset(0.0, 0.0),
-                )
-              ], borderRadius: BorderRadius.all(Radius.circular(10))),
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  color: Colors.white),
               child: Row(
                 children: [
                   SizedBox(child: Image.asset('assets/img/icon3.png')),
@@ -103,14 +99,9 @@ class _MobileUnitScreenState extends State<MobileUnitScreen> {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Container(
               width: double.infinity,
-              decoration: const BoxDecoration(boxShadow: [
-                BoxShadow(
-                  color: Color(0xffDDDDDD),
-                  blurRadius: 6.0,
-                  spreadRadius: 2.0,
-                  offset: Offset(0.0, 0.0),
-                )
-              ], borderRadius: BorderRadius.all(Radius.circular(10))),
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  color: Colors.white),
               child: Row(
                 children: [
                   SizedBox(child: Image.asset('assets/img/icon3.png')),
@@ -148,7 +139,7 @@ class _MobileUnitScreenState extends State<MobileUnitScreen> {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

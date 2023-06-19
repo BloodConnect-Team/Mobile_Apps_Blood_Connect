@@ -16,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
               borderRadius:
                   const BorderRadius.vertical(bottom: Radius.circular(20)),
             ),
-            child: const Expanded(
+            child: Expanded(
               child: Column(children: [
                 SizedBox(
                   height: 40,
@@ -32,12 +32,16 @@ class ProfileScreen extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                CircleAvatar(
-                  radius: 55,
-                  backgroundColor: Colors.white,
-                  child: CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage('assets/img/bro.png'),
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.asset('assets/img/avatar.png'),
                   ),
                 ),
                 Column(

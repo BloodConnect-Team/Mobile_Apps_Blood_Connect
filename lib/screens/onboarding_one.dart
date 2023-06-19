@@ -27,7 +27,7 @@ class _OnboardingOneState extends State<OnboardingOne> {
                 height: 50,
               ),
               const Text(
-                'Welcome To Blood Connect',
+                'Selamat Datang di Blood Connect',
                 style: TextStyle(
                     fontWeight: FontWeight.w700,
                     color: Colors.black87,
@@ -75,9 +75,9 @@ class _OnboardingOneState extends State<OnboardingOne> {
                         Navigator.of(context).popAndPushNamed('/OnBoardingTwo');
                       },
                       child: const Text(
-                        'Next',
+                        'Lanjut',
                         style: TextStyle(
-                          fontSize: 17,
+                          fontSize: 15,
                         ),
                       ),
                     ),
@@ -121,7 +121,7 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
                 height: 50,
               ),
               const Text(
-                'You Are SuperHero',
+                'Kamu Adalah Pahlawan',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   color: Colors.black87,
@@ -172,9 +172,9 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
                         );
                       },
                       child: const Text(
-                        'Next',
+                        'Lanjut',
                         style: TextStyle(
-                          fontSize: 17,
+                          fontSize: 15,
                         ),
                       ),
                     ),
@@ -246,7 +246,10 @@ class OnboardingTree extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).popAndPushNamed('/LoginScreen');
                         },
-                        child: const Text('LOG IN'),
+                        child: const Text(
+                          'MASUK',
+                          style: TextStyle(fontWeight: FontWeight.w600),
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -260,7 +263,7 @@ class OnboardingTree extends StatelessWidget {
                               ElevatedButton.styleFrom(primary: primaryColor),
                           onPressed: () => Navigator.of(context)
                               .popAndPushNamed('/registerScreen'),
-                          child: const Text('REGISTER'),
+                          child: const Text('DAFTAR'),
                         ),
                       ),
                     ),

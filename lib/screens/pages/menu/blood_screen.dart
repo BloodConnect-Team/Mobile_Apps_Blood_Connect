@@ -1,3 +1,4 @@
+import 'package:blood_connect/color/color.dart';
 import 'package:flutter/material.dart';
 
 class BloodScreen extends StatelessWidget {
@@ -6,8 +7,13 @@ class BloodScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Blood screen'),
+      body: Column(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            color: primaryColor,
+          ),
+        ],
       ),
     );
   }

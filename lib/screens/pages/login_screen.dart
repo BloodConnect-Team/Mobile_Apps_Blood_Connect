@@ -1,5 +1,6 @@
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/data/repository/repository_post.dart';
+import 'package:blood_connect/providers/service_provider.dart';
 import 'package:blood_connect/screens/pages/bottomnav/bottom_navigation.dart';
 import 'package:blood_connect/screens/pages/forgot_.password_screen.dart';
 import 'package:blood_connect/screens/pages/register_screen.dart';
@@ -14,7 +15,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _login = "LOG IN";
   final _submitDataForm = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -22,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   String _password = '';
   String _email = '';
   RepositoryPost repositoryLogin = RepositoryPost();
+  ServiceProvider service = ServiceProvider();
   void submitData() {
     if (_submitDataForm.currentState != null) {
       if (_submitDataForm.currentState!.validate()) {
@@ -33,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _PasswordVisible = true;
   @override
   void initState() {
-    _PasswordVisible = false;
+    _PasswordVisible = !_PasswordVisible;
     super.initState();
   }
 
@@ -86,6 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         controller: emailController,
                         decoration: InputDecoration(
                           hintText: "Your email@gmail.com",
+                          label: Text('E-mail'),
                           filled: true,
                           border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(
@@ -132,6 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         obscureText: !_PasswordVisible,
                         decoration: InputDecoration(
                           hintText: "Password",
+                          label: Text('Password'),
                           border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                           ),
@@ -189,13 +192,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
                 onPressed: () async {
-                  showDialog(
-                      context: context,
-                      builder: (context) {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      });
+                  service.doLogin(context);
                   bool responseLogin = await repositoryLogin.PostDataLogin(
                     emailController.text,
                     passwordController.text,
@@ -205,7 +202,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   } else {
                     const SnackBar(
                       content: Center(
-                        child: Text("Anda Gagal Login"),
+                        child: Text("Gagal"),
                       ),
                       backgroundColor: Colors.redAccent,
                       duration: Duration(seconds: 2),
@@ -215,16 +212,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     );
                   }
                 },
-                child: Text(_login),
+                child: const Text('Masuk'),
               ),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (builder) => const ForgotPasswordScreen()));
+                    builder: (builder) => ForgotPasswordScreen()));
               },
               child: Text(
-                'Forgot Password?',
+                'Lupa Password?',
                 style: TextStyle(fontSize: 15, color: primaryColor),
               ),
             ),
@@ -233,14 +230,14 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Don't have an account?"),
+                  const Text("Belum punya akun?"),
                   TextButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (builder) => const RegisterScreen()));
                     },
                     child: Text(
-                      'Register Now',
+                      'Daftar',
                       style: TextStyle(color: primaryColor),
                     ),
                   )

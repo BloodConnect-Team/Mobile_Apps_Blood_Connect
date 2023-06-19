@@ -10,125 +10,78 @@ class ButtonGoldar extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 5),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
-                height: 30,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        side: BorderSide(color: Colors.white, width: 1),
-                      ),
-                    ),
-                  ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
                   child: Text(
-                    'semua',
+                    'Semua',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 13,
+                      color: Colors.white,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ),
-              Container(
-                height: 30,
-                width: 60,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        side: BorderSide(color: Colors.white, width: 1),
-                      ),
-                    ),
-                  ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
                   child: Text(
                     'A+',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 13,
+                      color: Colors.white,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ),
-              Container(
-                height: 30,
-                width: 60,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    overlayColor: getColor(Colors.black, Colors.white),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        side: BorderSide(color: Colors.white, width: 1),
-                      ),
-                    ),
-                  ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
                   child: Text(
                     'A-',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 13,
+                      color: Colors.white,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ),
-              Container(
-                height: 30,
-                width: 60,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    overlayColor: getColor(Colors.black, Colors.white),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        side: BorderSide(color: Colors.white, width: 1),
-                      ),
-                    ),
-                  ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
                   child: Text(
-                    ' B+',
+                    'B+',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 13,
+                      color: Colors.white,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ),
-              Container(
-                height: 30,
-                width: 60,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    overlayColor: getColor(Colors.black, Colors.white),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        side: BorderSide(color: Colors.white, width: 1),
-                      ),
-                    ),
-                  ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
                   child: Text(
                     'B-',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 13,
+                      color: Colors.white,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -136,100 +89,60 @@ class ButtonGoldar extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 5),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Container(
-                height: 30,
-                width: 50,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    overlayColor: getColor(Colors.black, Colors.white),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        side: BorderSide(color: Colors.white, width: 1),
-                      ),
-                    ),
-                  ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
                   child: Text(
-                    '0+',
+                    'O +',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 13,
+                      color: Colors.white,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ),
-              Container(
-                height: 30,
-                width: 50,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    overlayColor: getColor(Colors.black, Colors.white),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        side: BorderSide(color: Colors.white, width: 1),
-                      ),
-                    ),
-                  ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
                   child: Text(
-                    'O-',
+                    'O -',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 13,
+                      color: Colors.white,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ),
-              Container(
-                height: 30,
-                width: 60,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    overlayColor: getColor(Colors.black, Colors.white),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        side: BorderSide(color: Colors.white, width: 1),
-                      ),
-                    ),
-                  ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
                   child: Text(
                     'AB+',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 13,
+                      color: Colors.white,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ),
-              Container(
-                height: 30,
-                width: 60,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    overlayColor: getColor(Colors.black, Colors.white),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        side: BorderSide(color: Colors.white, width: 1),
-                      ),
-                    ),
-                  ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
                   child: Text(
                     'AB-',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 13,
+                      color: Colors.white,
                       fontWeight: FontWeight.w700,
                     ),
                   ),

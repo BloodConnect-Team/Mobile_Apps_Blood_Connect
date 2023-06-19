@@ -1,3 +1,5 @@
+// ignore_for_file: await_only_futures
+
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/data/repository/repository_post.dart';
 import 'package:blood_connect/screens/pages/login_screen.dart';
@@ -19,20 +21,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   RepositoryPost repository = RepositoryPost();
 
-  static Future _getWidgetDialog(BuildContext context) {
-    return Future.delayed(const Duration(seconds: 4), () async {
-      showDialog(
-          context: context,
-          builder: (context) {
-            return const Center(child: CircularProgressIndicator());
-          });
-      return await Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (builder) => const LoginScreen()));
-    });
-  }
-
-  Future snackbarRegister() {
-    return Future.delayed(const Duration(seconds: 0), () {
+  void doRegiter() async {
+    Navigator.of(context).popAndPushNamed('/LoginScreen');
+    await Future.delayed(const Duration(seconds: 4), () {
       return const SnackBar(
         content: Center(child: Text('Selamat Anda Sudah Register')),
         backgroundColor: Colors.redAccent,
@@ -286,9 +277,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       passwordController.text,
                       goldarController.text);
                   if (response) {
-                    Navigator.of(context).popAndPushNamed('/LoginScreen');
-
-                    snackbarRegister();
+                    doRegiter();
                   } else {
                     const SnackBar(
                       content: Center(
@@ -302,7 +291,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     );
                   }
                 },
-                child: const Text('REGISTER'),
+                child: const Text('DAFTAR'),
               ),
             ),
             Container(
@@ -311,7 +300,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Already have an account?",
+                    "Sudah Punya Akun",
                     style: TextStyle(color: Colors.black87),
                   ),
                   TextButton(
@@ -319,7 +308,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         Navigator.of(context).popAndPushNamed('/LoginScreen');
                       },
                       child: Text(
-                        "Log In",
+                        "Masuk",
                         style: TextStyle(color: primaryColor),
                       ))
                 ],

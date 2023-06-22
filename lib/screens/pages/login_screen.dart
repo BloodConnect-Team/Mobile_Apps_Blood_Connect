@@ -1,10 +1,12 @@
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/data/repository/repository_post.dart';
+import 'package:blood_connect/providers/auth_provider.dart';
 import 'package:blood_connect/providers/service_provider.dart';
 import 'package:blood_connect/screens/pages/bottomnav/bottom_navigation.dart';
 import 'package:blood_connect/screens/pages/forgot_.password_screen.dart';
 import 'package:blood_connect/screens/pages/register_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({
@@ -19,8 +21,10 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool isLogin = false;
+
   String password = '';
   String email = '';
+
   RepositoryPost repositoryLogin = RepositoryPost();
   ServiceProvider service = ServiceProvider();
   void submitData() {
@@ -38,11 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
   }
 
-  void submitToHome() {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (buider) => const BottomNavigation()));
-  }
-
+ 
   @override
   void dispose() {
     emailController.dispose();
@@ -192,25 +192,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
                 onPressed: () async {
-                  service.doLogin(context);
-                  bool responseLogin = await repositoryLogin.PostDataLogin(
-                    emailController.text,
-                    passwordController.text,
-                  );
-                  if (responseLogin) {
-                    submitToHome();
-                  } else {
-                    const SnackBar(
-                      content: Center(
-                        child: Text("Gagal"),
-                      ),
-                      backgroundColor: Colors.redAccent,
-                      duration: Duration(seconds: 2),
-                      behavior: SnackBarBehavior.floating,
-                      margin: EdgeInsets.all(40),
-                      elevation: 10,
-                    );
-                  }
+                  Provider.of<authProvider>(context, listen: false).login(context: context, email: emailController.text, password: passwordController.text);
                 },
                 child: const Text('Masuk'),
               ),

@@ -1,8 +1,12 @@
+import 'package:blood_connect/providers/auth_provider.dart';
+import 'package:blood_connect/providers/profile_provider.dart';
 import 'package:blood_connect/screens/onboarding_one.dart';
+import 'package:blood_connect/screens/pages/bottomnav/bottom_navigation.dart';
 import 'package:blood_connect/screens/pages/login_screen.dart';
 import 'package:blood_connect/screens/pages/register_screen.dart';
 import 'package:blood_connect/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(
@@ -14,22 +18,33 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Blood Connection',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      // home: PageSatu(),
-      home: const SplashScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => authProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ProfileProvider()..getProfile(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Blood Connection',
+        theme: ThemeData(
+          primarySwatch: Colors.red,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        // home: PageSatu(),
+        home: const SplashScreen(),
 
-      //
-      initialRoute: '/',
-      routes: {
-        '/registerScreen': (context) => const RegisterScreen(),
-        '/LoginScreen': (context) => const LoginScreen(),
-        '/OnBoardingTwo': (context) => const OnboardingTwo(),
-      },
+        //
+        initialRoute: '/',
+        routes: {
+          '/registerScreen': (context) => const RegisterScreen(),
+          '/LoginScreen': (context) => const LoginScreen(),
+          '/OnBoardingTwo': (context) => const OnboardingTwo(),
+          '/home': (context) => const BottomNavigation(),
+        },
+      ),
     );
   }
 }

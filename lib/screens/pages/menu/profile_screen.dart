@@ -1,5 +1,7 @@
+import 'package:blood_connect/providers/profile_provider.dart';
 import 'package:blood_connect/screens/pages/account/setting_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -42,13 +44,13 @@ class ProfileScreen extends StatelessWidget {
                   child: Container(
                     height: 90,
                     width: 90,
-                    child: Image.asset('assets/img/avatar.png'),
+                    child: Image.network(Provider.of<ProfileProvider>(context).photo),
                   ),
                 ),
                 Column(
                   children: [
                     Text(
-                      'Fahim Eka',
+                      Provider.of<ProfileProvider>(context).name,
                       style: TextStyle(
                           fontSize: 17,
                           fontFamily: 'Poppins',
@@ -58,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      '+O',
+                      Provider.of<ProfileProvider>(context).goldar,
                       style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w500,

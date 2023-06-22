@@ -1,29 +1,15 @@
 import 'package:blood_connect/color/color.dart';
+import 'package:blood_connect/providers/profile_provider.dart';
 import 'package:blood_connect/screens/pages/mainpage/mobile_unit_screen.dart';
 import 'package:blood_connect/screens/pages/mainpage/notification_screen.dart';
 import 'package:blood_connect/screens/pages/mainpage/stok_darah_screen.dart';
 import 'package:blood_connect/widgets/news_home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class HomePageScreen extends StatefulWidget {
+class HomePageScreen extends StatelessWidget {
   const HomePageScreen({super.key});
 
-  @override
-  State<HomePageScreen> createState() => _HomePageScreenState();
-}
-
-// final widgetOptions = [ProfilDetailScreen(), BloodScreen(), SearchScreen()];
-
-class _HomePageScreenState extends State<HomePageScreen> {
-  void animationToStok() {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (builder) => const MobileUnitScreen()));
-  }
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,19 +50,19 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                       AssetImage('assets/img/news.png'),
                                 ),
                                 const SizedBox(width: 20),
-                                const Expanded(
+                                 Expanded(
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "fauzan",
+                                        Provider.of<ProfileProvider>(context).name ,
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 16,
                                             color: Colors.white),
                                       ),
-                                      Text("O+",
+                                      Text(Provider.of<ProfileProvider>(context).goldar,
                                           style: TextStyle(
                                               fontSize: 14,
                                               color: Colors.white)),

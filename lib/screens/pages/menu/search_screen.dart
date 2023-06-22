@@ -14,18 +14,18 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.grey[200],
       body: Column(children: [
         Container(
           width: MediaQuery.of(context).size.width,
           height: 230,
           decoration: BoxDecoration(
             color: primaryColor,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Colors.grey,
-                spreadRadius: 5,
-                blurRadius: 5,
+                spreadRadius: 2,
+                blurRadius: 3,
                 offset: Offset(0, 1),
               )
             ],
@@ -76,17 +76,86 @@ class _SearchScreenState extends State<SearchScreen> {
         const SizedBox(
           height: 20,
         ),
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
-            children: [
-              Container(
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(30)),
-                child: Text('A+'),
-              )
-            ],
-          ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              color: Colors.white,
+              margin: EdgeInsets.all(10.0),
+              child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 60,
+                      width: 70,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30.0),
+                        color: ontapButton,
+                      ),
+                      child: Center(
+                        child: Text(
+                          'B+',
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.redAccent,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 25.0),
+                          child: Text(
+                            "Fajar Rivaldi chan",
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.bloodtype_rounded,
+                              color: Colors.grey,
+                            ),
+                            Text(
+                              "Whole blood",
+                              style: TextStyle(
+                                  fontSize: 10, fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.location_on,
+                              color: Colors.grey,
+                            ),
+                            Text(
+                              "Kota Lhokseumawe",
+                              style: TextStyle(
+                                  fontSize: 10, fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "5 Menit yang lalu",
+                          style: TextStyle(fontSize: 12, color: Colors.grey),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
         )
       ]),
     );

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ButtonGoldar extends StatelessWidget {
+class ButtonGoldar extends StatefulWidget {
   const ButtonGoldar({super.key});
 
+  @override
+  State<ButtonGoldar> createState() => _ButtonGoldarState();
+}
+
+class _ButtonGoldarState extends State<ButtonGoldar> {
   @override
   Widget build(BuildContext context) {
     return Column(

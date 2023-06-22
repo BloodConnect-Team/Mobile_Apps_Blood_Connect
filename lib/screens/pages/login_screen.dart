@@ -19,8 +19,8 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool isLogin = false;
-  String _password = '';
-  String _email = '';
+  String password = '';
+  String email = '';
   RepositoryPost repositoryLogin = RepositoryPost();
   ServiceProvider service = ServiceProvider();
   void submitData() {
@@ -119,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           return null;
                         },
                         onSaved: (value) {
-                          _email = value ?? '';
+                          email = value ?? '';
                         },
                       ),
                     ),
@@ -173,7 +173,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           return null;
                         },
                         onSaved: (value) {
-                          _password = value ?? '';
+                          password = value ?? '';
                         },
                       ),
                     ),

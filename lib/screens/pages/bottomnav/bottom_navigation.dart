@@ -1,3 +1,4 @@
+import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/screens/pages/home_page_screen.dart';
 import 'package:blood_connect/screens/pages/menu/blood_screen.dart';
 import 'package:blood_connect/screens/pages/menu/profile_screen.dart';
@@ -33,16 +34,15 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       body: _listPage[_selectedBottom],
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 5),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
         child: GNav(
-            gap: 5,
+            gap: 10,
             tabBorderRadius: 30,
             haptic: true,
             color: Colors.redAccent,
             activeColor: Colors.redAccent,
-            backgroundColor: Colors.white,
-            tabBackgroundColor: Colors.grey,
-            iconSize: 25,
+            tabBackgroundColor: ontapButton,
+            iconSize: 24,
             padding: const EdgeInsets.all(10),
             onTabChange: (value) {
               onItemTap(value);
@@ -51,12 +51,22 @@ class _BottomNavigationState extends State<BottomNavigation> {
               GButton(
                 icon: Icons.home,
                 text: 'Home',
+                textColor: Colors.red,
               ),
-              GButton(icon: Icons.search, text: 'Search'),
-              GButton(icon: Icons.bloodtype_sharp, text: 'Blood'),
+              GButton(
+                icon: Icons.search,
+                text: 'Search',
+                textColor: Colors.red,
+              ),
+              GButton(
+                icon: Icons.bloodtype_sharp,
+                text: 'Blood',
+                textColor: Colors.red,
+              ),
               GButton(
                 icon: Icons.person,
                 text: 'Profil',
+                textColor: Colors.red,
               )
             ]),
       ),

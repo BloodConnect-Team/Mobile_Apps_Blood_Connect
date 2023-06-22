@@ -45,6 +45,7 @@ class _SplashScreenState extends State<SplashScreen>
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
+          height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(color: primaryColor),
           child: Expanded(
             child: Column(

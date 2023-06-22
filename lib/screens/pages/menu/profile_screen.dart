@@ -1,3 +1,4 @@
+import 'package:blood_connect/screens/pages/account/setting_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -33,8 +34,8 @@ class ProfileScreen extends StatelessWidget {
                   height: 10,
                 ),
                 Container(
-                  width: 100,
-                  height: 100,
+                  width: 95,
+                  height: 95,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -77,6 +78,10 @@ class ProfileScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (builder) => SettingScreen()));
+                  },
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     child: Row(
@@ -89,7 +94,7 @@ class ProfileScreen extends StatelessWidget {
                         const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10)),
                         const Text(
-                          'Setting',
+                          'Pengaturan',
                           style: TextStyle(fontSize: 19, color: Colors.black),
                         )
                       ],
@@ -112,7 +117,7 @@ class ProfileScreen extends StatelessWidget {
                         const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10)),
                         const Text(
-                          'Privacy Policy',
+                          'Kebijakan Privasi',
                           style: TextStyle(fontSize: 19, color: Colors.black),
                         )
                       ],
@@ -135,7 +140,7 @@ class ProfileScreen extends StatelessWidget {
                         const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10)),
                         const Text(
-                          'Get Help',
+                          'Butuh Bantuan',
                           style: TextStyle(fontSize: 19, color: Colors.black),
                         )
                       ],
@@ -159,7 +164,7 @@ class ProfileScreen extends StatelessWidget {
                         const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10)),
                         const Text(
-                          'Sign Out',
+                          'Keluar',
                           style: TextStyle(fontSize: 19, color: Colors.black),
                         )
                       ],

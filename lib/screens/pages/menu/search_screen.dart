@@ -104,7 +104,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       ),
                     ),
                     Column(
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 25.0),
@@ -116,18 +116,21 @@ class _SearchScreenState extends State<SearchScreen> {
                         SizedBox(
                           height: 10,
                         ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.bloodtype_rounded,
-                              color: Colors.grey,
-                            ),
-                            Text(
-                              "Whole blood",
-                              style: TextStyle(
-                                  fontSize: 10, fontWeight: FontWeight.w400),
-                            ),
-                          ],
+                        Padding(
+                          padding: EdgeInsets.only(right: 30.0),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.bloodtype_rounded,
+                                color: Colors.grey,
+                              ),
+                              Text(
+                                "Whole blood",
+                                style: TextStyle(
+                                    fontSize: 10, fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
                         ),
                         Row(
                           children: [

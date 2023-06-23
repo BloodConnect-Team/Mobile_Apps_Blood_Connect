@@ -2,7 +2,6 @@
 
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/data/repository/repository_post.dart';
-import 'package:blood_connect/screens/pages/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {

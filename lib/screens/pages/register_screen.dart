@@ -2,7 +2,9 @@
 
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/data/repository/repository_post.dart';
+import 'package:blood_connect/providers/auth_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -19,20 +21,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final goldarController = TextEditingController();
 
   RepositoryPost repository = RepositoryPost();
-
-  void doRegiter() async {
-    Navigator.of(context).popAndPushNamed('/LoginScreen');
-    await Future.delayed(const Duration(seconds: 4), () {
-      return const SnackBar(
-        content: Center(child: Text('Selamat Anda Sudah Register')),
-        backgroundColor: Colors.redAccent,
-        behavior: SnackBarBehavior.floating,
-        duration: Duration(seconds: 3),
-        margin: EdgeInsets.all(40),
-        elevation: 10,
-      );
-    });
-  }
 
   @override
   void initState() {
@@ -108,12 +96,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Nama anda Kosong';
-                      }
-                      return value.trim();
-                    },
                   ),
                 ),
               ),
@@ -149,15 +131,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       color: Colors.amber,
                     ),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Masukkan email anda dengan Benar';
-                    } else if (value.contains('@')) {
-                      return 'Email anda harus memasukkan karakter khusus';
-                    }
-
-                    return null;
-                  },
                 ),
               ),
             ),
@@ -241,10 +214,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                     ),
-                    prefix: const VerticalDivider(
-                      width: 10,
-                      color: Colors.amber,
-                    ),
                   ),
                 ),
               ),
@@ -264,31 +233,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       borderRadius: BorderRadius.circular(10)),
                 ),
                 onPressed: () async {
-                  showDialog(
+                  Provider.of<authProvider>(context, listen: false).register(
                       context: context,
-                      builder: (context) {
-                        return const Center(child: CircularProgressIndicator());
-                      });
-
-                  bool response = await repository.posDataRegister(
-                      nameController.text,
-                      emailController.text,
-                      passwordController.text,
-                      goldarController.text);
-                  if (response) {
-                    doRegiter();
-                  } else {
-                    const SnackBar(
-                      content: Center(
-                        child: Text("Register Anda gagal"),
-                      ),
-                      backgroundColor: Colors.redAccent,
-                      duration: Duration(seconds: 2),
-                      behavior: SnackBarBehavior.floating,
-                      margin: EdgeInsets.all(40),
-                      elevation: 10,
-                    );
-                  }
+                      username: nameController.text,
+                      email: emailController.text,
+                      password: passwordController.text,
+                      goldar: goldarController.text);
                 },
                 child: const Text('DAFTAR'),
               ),

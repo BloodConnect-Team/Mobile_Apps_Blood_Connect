@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 4), () {
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (_) => const OnboardingOne()));
     });

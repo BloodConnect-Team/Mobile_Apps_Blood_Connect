@@ -10,7 +10,6 @@ import 'package:provider/provider.dart';
 class HomePageScreen extends StatelessWidget {
   const HomePageScreen({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,19 +49,22 @@ class HomePageScreen extends StatelessWidget {
                                       AssetImage('assets/img/news.png'),
                                 ),
                                 const SizedBox(width: 20),
-                                 Expanded(
+                                Expanded(
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        Provider.of<ProfileProvider>(context).name ,
+                                        Provider.of<ProfileProvider>(context)
+                                            .name,
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 16,
                                             color: Colors.white),
                                       ),
-                                      Text(Provider.of<ProfileProvider>(context).goldar,
+                                      Text(
+                                          Provider.of<ProfileProvider>(context)
+                                              .goldar,
                                           style: TextStyle(
                                               fontSize: 14,
                                               color: Colors.white)),

@@ -35,16 +35,12 @@ class ProfileScreen extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                Container(
-                  width: 95,
-                  height: 95,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  child: Container(
-                    height: 90,
-                    width: 90,
-                    child: Image.network(Provider.of<ProfileProvider>(context).photo),
+                ClipOval(
+                  child: SizedBox.fromSize(
+                    size: Size.fromRadius(55.0), // Image radius
+                    child: Image.network(
+                        Provider.of<ProfileProvider>(context).photo,
+                        fit: BoxFit.cover),
                   ),
                 ),
                 Column(

@@ -14,10 +14,10 @@ class NewsModel {
   });
 
   factory NewsModel.fromJson(Map<String, dynamic> json) => NewsModel(
-        id: json["id"],
-        title: json["Title"],
-        content: json["Content"],
-        author: json["Author"],
-        date: json["date"],
+        id: json["id"] ?? 0,
+        title: json["Title"] ?? "",
+        content: json["Content"] ?? "",
+        author: json["Author"]?? "",
+        date: json["date"]?? "" ,
       );
 }

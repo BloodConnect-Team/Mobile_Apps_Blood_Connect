@@ -1,4 +1,5 @@
 import 'package:blood_connect/providers/auth_provider.dart';
+import 'package:blood_connect/providers/information_provider.dart';
 import 'package:blood_connect/providers/profile_provider.dart';
 import 'package:blood_connect/screens/onboarding_one.dart';
 import 'package:blood_connect/screens/pages/bottomnav/bottom_navigation.dart';
@@ -26,6 +27,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => ProfileProvider()..getProfile(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => InformationProvider()..news(),
+        ),
       ],
       child: MaterialApp(
         title: 'Blood Connection',
@@ -39,9 +43,9 @@ class MyApp extends StatelessWidget {
         //
         initialRoute: '/',
         routes: {
+          '/OnBoardingTwo': (context) => const OnboardingTwo(),
           '/registerScreen': (context) => const RegisterScreen(),
           '/LoginScreen': (context) => const LoginScreen(),
-          '/OnBoardingTwo': (context) => const OnboardingTwo(),
           '/home': (context) => const BottomNavigation(),
         },
       ),

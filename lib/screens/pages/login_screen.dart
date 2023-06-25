@@ -17,8 +17,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _submitDataForm = GlobalKey<FormState>();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController emailController = TextEditingController(text: "komodo@gmail.com");
+  TextEditingController passwordController = TextEditingController(text: "09876");
   bool isLogin = false;
 
   String password = '';

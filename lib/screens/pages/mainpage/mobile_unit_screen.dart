@@ -13,7 +13,13 @@ class _MobileUnitScreenState extends State<MobileUnitScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        leading: const BackButton(color: Colors.black),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios_new),
+          color: Colors.black,
+        ),
         centerTitle: true,
         title: const Text(
           'Mobil Unit',

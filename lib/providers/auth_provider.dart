@@ -32,17 +32,13 @@ class authProvider extends ChangeNotifier {
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
       notifyListeners();
     } else {
-      var snackbar = const SnackBar(
+      final snackBar = SnackBar(
         content: Center(
-          child: Text("GAGAL"),
+          child: Text('register gagal'),
         ),
-        backgroundColor: Colors.redAccent,
-        duration: Duration(seconds: 2),
-        behavior: SnackBarBehavior.floating,
-        margin: EdgeInsets.all(40),
-        elevation: 10,
       );
-      ScaffoldMessenger.of(context).showSnackBar(snackbar);
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      notifyListeners();
     }
   }
 
@@ -81,7 +77,5 @@ class authProvider extends ChangeNotifier {
 
   void logout() {}
 
-  // Future<void> autoLogin() async {
-  //   final prefAutoLogin = await SharedPreferences.getInstance();
-  // }
+  void loginAutomation() {}
 }

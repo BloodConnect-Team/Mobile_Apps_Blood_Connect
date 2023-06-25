@@ -12,16 +12,22 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _SettingScreenState extends State<SettingScreen> {
-  final List<Map<String, dynamic>> _itemsCity = [
-    {'value': "Lhokseumawe"}
-  ];
+  TextEditingController usernameSetting = TextEditingController();
+  TextEditingController emailSetting = TextEditingController();
+  TextEditingController noHp = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
         centerTitle: true,
-        leading: const BackButton(color: Colors.black),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: const Icon(Icons.arrow_back_ios_new),
+          color: Colors.black,
+        ),
         title: const Text(
           'Pengaturan',
           style: TextStyle(fontSize: 17, color: Colors.black),

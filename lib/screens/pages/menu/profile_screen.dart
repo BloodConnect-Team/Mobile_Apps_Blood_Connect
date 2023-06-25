@@ -1,3 +1,4 @@
+import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/providers/profile_provider.dart';
 import 'package:blood_connect/screens/pages/account/setting_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: 250,
             decoration: BoxDecoration(
-              color: Colors.red[400],
+              color: primaryColor,
               borderRadius:
                   const BorderRadius.vertical(bottom: Radius.circular(20)),
             ),

@@ -12,7 +12,13 @@ class _StokDarahScreenState extends State<StokDarahScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButton(color: Colors.black),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios_new),
+          color: Colors.black,
+        ),
         centerTitle: true,
         title: const Text(
           'Stok Darah',

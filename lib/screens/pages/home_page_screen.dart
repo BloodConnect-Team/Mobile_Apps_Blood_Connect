@@ -212,7 +212,7 @@ class HomePageScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
               child: Text(
                 "Berita dan Artikel",
@@ -223,8 +223,8 @@ class HomePageScreen extends StatelessWidget {
               ),
             ),
             const NewsHomePage(),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
               child: Text(
                 'Pertanyaan Umum',
                 style: TextStyle(
@@ -234,28 +234,96 @@ class HomePageScreen extends StatelessWidget {
               ),
             ),
             Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child: Column(children: []),
-            )
+              color: primaryColor,
+              child: ExpansionTile(
+                title: Text(
+                  'Mengapa Kita Harus Bayar Ketika kita Butuh Darah Dari PMI ?',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13,
+                      color: Colors.white),
+                ),
+                children: [
+                  ColoredBox(
+                    color: Colors.white,
+                    child: ListTile(
+                      title: Text('ListTile with red background'),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+              width: MediaQuery.of(context).size.width,
+              color: primaryColor,
+              child: ExpansionTile(
+                title: Text(
+                  'Mengapa Kita Perlu Donor Darah ?',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13,
+                      color: Colors.white),
+                ),
+                children: [
+                  ColoredBox(
+                    color: Colors.white,
+                    child: ListTile(
+                      title: Text('ListTile with red background'),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+              width: MediaQuery.of(context).size.width,
+              color: primaryColor,
+              child: ExpansionTile(
+                title: Text(
+                  'Kenapa Kita Membutuhkan Darah Prosesnya Lama ?',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13,
+                      color: Colors.white),
+                ),
+                children: [
+                  ColoredBox(
+                    color: Colors.white,
+                    child: ListTile(
+                      title: Text('ListTile with red background'),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+              width: MediaQuery.of(context).size.width,
+              color: primaryColor,
+              child: ExpansionTile(
+                title: Text(
+                  'Apa yang harus kita persiapkan Sebelum Donor ?',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13,
+                      color: Colors.white),
+                ),
+                children: [
+                  ColoredBox(
+                    color: Colors.white,
+                    child: ListTile(
+                      title: Text('ListTile with red background'),
+                    ),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
-}
-
-Widget _listFaq() {
-  return CustomScrollView(
-    slivers: [
-      SliverList(delegate: SliverChildBuilderDelegate((context, index) {
-        return Container(
-          height: 30,
-          margin: const EdgeInsets.all(20),
-          decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(10))),
-        );
-      }))
-    ],
-  );
 }

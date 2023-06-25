@@ -1,3 +1,5 @@
+import 'package:blood_connect/color/color.dart';
+import 'package:blood_connect/widgets/widget_list_notification.dart';
 import 'package:flutter/material.dart';
 
 class NotificationScreen extends StatefulWidget {
@@ -11,8 +13,15 @@ class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        leading: const BackButton(color: Colors.black),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios_new),
+          color: Colors.black,
+        ),
         centerTitle: true,
         title: const Text(
           'Notification',
@@ -20,7 +29,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
         ),
         backgroundColor: Colors.white,
       ),
-      body: null,
+      body: Column(
+        children: [WidgetListNotification()],
+      ),
     );
   }
 }

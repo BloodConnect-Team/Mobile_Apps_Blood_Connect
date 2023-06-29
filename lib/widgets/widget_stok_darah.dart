@@ -23,7 +23,7 @@ class WidgetStokDarah extends StatelessWidget {
                     'A+',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Text(state.stokDarah.toString())
+                  Text(state.stokDarah["A_pos"].toString())
                 ],
               ),
             ),
@@ -36,7 +36,7 @@ class WidgetStokDarah extends StatelessWidget {
                     'B+',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Text('')
+                  Text(state.stokDarah["B_pos"].toString())
                 ],
               ),
             ),

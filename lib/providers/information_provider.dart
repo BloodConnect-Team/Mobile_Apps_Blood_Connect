@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class InformationProvider extends ChangeNotifier {
   List newsList = [];
   List detailNews = [];
-  Object stokDarah = {};
+  var stokDarah;
 
   void news() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();

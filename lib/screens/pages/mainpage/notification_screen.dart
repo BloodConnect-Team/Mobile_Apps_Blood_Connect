@@ -1,4 +1,3 @@
-import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/widgets/widget_list_notification.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +29,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
         backgroundColor: Colors.white,
       ),
       body: Column(
-        children: [WidgetListNotification()],
+        children: [
+          WidgetListNotification(),
+        ],
       ),
     );
   }

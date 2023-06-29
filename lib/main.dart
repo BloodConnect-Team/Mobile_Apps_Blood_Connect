@@ -28,7 +28,10 @@ class MyApp extends StatelessWidget {
           create: (context) => ProfileProvider()..getProfile(),
         ),
         ChangeNotifierProvider(
-          create: (context) => InformationProvider()..news(),
+          create: (context) => InformationProvider()
+            ..news()
+            ..newsDetail()
+            ..stokUdd(),
         ),
       ],
       child: MaterialApp(

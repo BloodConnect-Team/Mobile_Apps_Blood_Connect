@@ -42,11 +42,14 @@ class HomePageScreen extends StatelessWidget {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                const CircleAvatar(
-                                  minRadius: 30,
-                                  backgroundColor: Colors.white,
-                                  backgroundImage:
-                                      AssetImage('assets/img/news.png'),
+                                ClipOval(
+                                  child: SizedBox.fromSize(
+                                    size: Size.fromRadius(30.0), // Image radius
+                                    child: Image.network(
+                                        Provider.of<ProfileProvider>(context)
+                                            .photo,
+                                        fit: BoxFit.cover),
+                                  ),
                                 ),
                                 const SizedBox(width: 20),
                                 Expanded(
@@ -249,7 +252,8 @@ class HomePageScreen extends StatelessWidget {
                   ColoredBox(
                     color: Colors.white,
                     child: ListTile(
-                      title: Text('ListTile with red background'),
+                      title: Text(
+                          'Biaya yang kita keluarkan perkantong darah sebenarnya adalah biaya penggantian pemeliharaan darah, supaya kondisinya tetap sama seperti saat berada dalam tubuh kita.'),
                     ),
                   )
                 ],
@@ -271,7 +275,8 @@ class HomePageScreen extends StatelessWidget {
                   ColoredBox(
                     color: Colors.white,
                     child: ListTile(
-                      title: Text('ListTile with red background'),
+                      title: Text(
+                          'Rajin mendonorkan darah kira-kira mampu menurunkan risiko serangan jantung hingga 88 persen. Tak hanya itu, mendonorkan darah juga bisa meminimalkan risiko kanker, stroke, dan serangan jantung. Menariknya lagi, manfaat donor darah juga bisa membuat kadar zat besi dalam darah jadi stabil.'),
                     ),
                   )
                 ],
@@ -293,7 +298,8 @@ class HomePageScreen extends StatelessWidget {
                   ColoredBox(
                     color: Colors.white,
                     child: ListTile(
-                      title: Text('ListTile with red background'),
+                      title: Text(
+                          'Secara umum, proses transfusi darah dapat berlangsung selama 1 sampai 4  jam, atau bisa lebih cepat. Tahap-tahap yang dilakukan oleh dokter pada proses transfusi darah antara lain: Meminta pasien untuk berbaring di tempat tidur'),
                     ),
                   )
                 ],
@@ -315,7 +321,8 @@ class HomePageScreen extends StatelessWidget {
                   ColoredBox(
                     color: Colors.white,
                     child: ListTile(
-                      title: Text('ListTile with red background'),
+                      title: Text(
+                          "Berat badan minimal 45 kilogram.Tekanan darah di atas 90/50 dan di bawah 180/100.Suhu tubuh antara 36,6-37,5 derajat Celsius.Tidak boleh dalam kondisi hamil.Hemoglobin wanita minimal 12 gram% dan pria minimal 13 gram%."),
                     ),
                   )
                 ],

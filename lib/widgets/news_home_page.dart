@@ -11,49 +11,52 @@ class NewsHomePage extends StatelessWidget {
       builder: (context, state, child) {
         return SizedBox(
           width: MediaQuery.of(context).size.width,
-          height: 250,
+          height: 210,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: state.newsList.length,
             itemBuilder: (context, index) {
-              
-                return Card(
-                  shadowColor: Colors.grey,
-                  elevation: 15,
-                  child: Container(
-                    width: 200,
-                    height: 150,
-                    margin: EdgeInsets.only(left: 10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                            margin: EdgeInsets.all(5),
-                            child: Image.asset('assets/img/news.png')),
-                        Text(
-                          state.newsList[index]["date"],
-                          style: TextStyle(fontSize: 10, fontFamily: 'Poppins'),
-                        ),
-                        Text(
-                          state.newsList[index]["Title"],
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'Poppins'),
-                        )
-                      ],
-                    ),
+              return Card(
+                shadowColor: Colors.grey,
+                elevation: 15,
+                child: Container(
+                  width: 250,
+                  height: 250,
+                  margin: EdgeInsets.only(left: 10),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                          margin: EdgeInsets.symmetric(horizontal: 5),
+                          child: Image.network(state.newsList[index]["Image"])),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        state.newsList[index]["date"],
+                        style: TextStyle(fontSize: 10, fontFamily: 'Poppins'),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        state.newsList[index]["Title"],
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Poppins'),
+                      )
+                    ],
                   ),
-                );
-               
+                ),
+              );
             },
           ),
         );
       },
     );
-
   }
 }

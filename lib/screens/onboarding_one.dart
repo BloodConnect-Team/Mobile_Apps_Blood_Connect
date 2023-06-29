@@ -256,8 +256,8 @@ class OnboardingTree extends StatelessWidget {
                       height: 10,
                     ),
                     GestureDetector(
-                      child: SizedBox(
-                        width: 300,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
                         child: ElevatedButton(
                           style:
                               ElevatedButton.styleFrom(primary: primaryColor),

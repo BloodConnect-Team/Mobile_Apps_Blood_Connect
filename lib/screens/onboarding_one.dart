@@ -199,7 +199,6 @@ class OnboardingTree extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.all(60),
           child: Column(
             children: [
               const SizedBox(
@@ -236,8 +235,9 @@ class OnboardingTree extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 60),
                 child: Column(
                   children: [
-                    SizedBox(
-                      width: 300,
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 30),
+                      width: MediaQuery.of(context).size.width,
                       child: OutlinedButton(
                         style: ButtonStyle(
                           side: MaterialStateProperty.all(
@@ -257,6 +257,7 @@ class OnboardingTree extends StatelessWidget {
                     ),
                     GestureDetector(
                       child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 30),
                         width: MediaQuery.of(context).size.width,
                         child: ElevatedButton(
                           style:

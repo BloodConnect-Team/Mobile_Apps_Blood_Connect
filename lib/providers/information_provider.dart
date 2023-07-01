@@ -8,7 +8,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 class InformationProvider extends ChangeNotifier {
   List newsList = [];
   List detailNews = [];
-  Object stokDarah = {};
+  var stokDarah;
+
+  List jadwalMobileUnit = [];
 
   void news() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -76,6 +78,50 @@ class InformationProvider extends ChangeNotifier {
     if (responseNewsDetail.statusCode == 200) {
       Object dataDetail = jsonDecode(responseNewsDetail.body)["data"];
       stokDarah = dataDetail;
+      notifyListeners();
+    } else {}
+  }
+
+  void listJadwalMobileUnit() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String? tokenAuth = prefs.getString('token-auth');
+    log("TOKEN : " + tokenAuth!);
+
+    Map<String, String> requestHeaders = {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': "Bearer" + tokenAuth!
+    };
+    final _baseUddStokDarah =
+        Uri.parse('https://api.bloodconnect.social/api/pmi/jadwal');
+    final responseNewsDetail =
+        await http.get(_baseUddStokDarah, headers: requestHeaders);
+    log("Mobil Unit:$_baseUddStokDarah\n StatusCode : ${responseNewsDetail.statusCode.toString()}\n Response : ${responseNewsDetail.body} ");
+    if (responseNewsDetail.statusCode == 200) {
+      List dataDetailMobilUnit = jsonDecode(responseNewsDetail.body)["data"];
+      jadwalMobileUnit = dataDetailMobilUnit;
+      notifyListeners();
+    } else {}
+  }
+
+  void searchMobile(String search) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String? tokenAuth = prefs.getString('token-auth');
+    log("TOKEN : " + tokenAuth!);
+
+    Map<String, String> requestHeaders = {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': "Bearer" + tokenAuth!
+    };
+    final _baseUddStokDarah =
+        Uri.parse('https://api.bloodconnect.social/api/pmi/jadwal');
+    final responseNewsDetail =
+        await http.get(_baseUddStokDarah, headers: requestHeaders);
+    log("Mobil Unit:$_baseUddStokDarah\n StatusCode : ${responseNewsDetail.statusCode.toString()}\n Response : ${responseNewsDetail.body} ");
+    if (responseNewsDetail.statusCode == 200) {
+      List dataDetailMobilUnit = jsonDecode(responseNewsDetail.body)["data"];
+      jadwalMobileUnit = dataDetailMobilUnit;
       notifyListeners();
     } else {}
   }

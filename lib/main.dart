@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => InformationProvider()
             ..news()
-            ..newsDetail()
-            ..stokUdd(),
+            ..stokUdd()
+            ..listJadwalMobileUnit(),
         ),
       ],
       child: MaterialApp(

@@ -1,7 +1,12 @@
+import 'dart:async';
+
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/screens/onboarding_one.dart';
+import 'package:blood_connect/screens/pages/bottomnav/bottom_navigation.dart';
+import 'package:blood_connect/screens/pages/home_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,6 +17,8 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
+  String? token;
+
   late final AnimationController _controlAnimasi = AnimationController(
     duration: const Duration(seconds: 3),
     vsync: this,
@@ -23,11 +30,26 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(const Duration(seconds: 4), () {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const OnboardingOne()));
-    });
+
+    openSplashScreen();
     super.initState();
+  }
+
+  openSplashScreen() async {
+    final _prefs = await SharedPreferences.getInstance();
+    token = _prefs.getString('token-auth');
+    var durasiSplash = const Duration(seconds: 2);
+    return Timer(durasiSplash, () {
+      if (token != null) {
+        print("TOKEN AUTHORIZATION : " + token!);
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (builder) => BottomNavigation()));
+      } else {
+        print("gagal");
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (buider) => OnboardingOne()));
+      }
+    });
   }
 
   @override
@@ -42,40 +64,34 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(color: primaryColor),
-          child: Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  height: 150,
-                ),
-                Center(
-                  child: SizeTransition(
-                    sizeFactor: _animation,
-                    axis: Axis.horizontal,
-                    axisAlignment: -1,
-                    child: Image.asset('assets/img/icon_splash.png'),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Text(
-                  'Blood Connect',
-                  style: TextStyle(
-                      fontFamily: 'Poppins', fontSize: 25, color: Colors.white),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(top: 127),
-                    child: Image.asset('assets/img/style_splash.png')),
-              ],
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: double.maxFinite,
+        decoration: BoxDecoration(color: primaryColor),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: SizeTransition(
+                sizeFactor: _animation,
+                axis: Axis.horizontal,
+                axisAlignment: -1,
+                child: Image.asset('assets/img/icon_splash.png'),
+              ),
             ),
-          ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              'Blood Connect',
+              style: TextStyle(
+                  fontFamily: 'Poppins', fontSize: 25, color: Colors.white),
+            ),
+            // Align(
+            //   alignment: FractionalOffset.bottomCenter,
+            //   child: Image.asset('assets/img/style_splash.png'),
+            // ),
+          ],
         ),
       ),
     );

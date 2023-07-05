@@ -19,8 +19,8 @@ class NewsHomePage extends StatelessWidget {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (builder) => DetailNews()));
+                  state.newsDetail(context, state.newsList[index]["id"]);
+                  // print(state.newsList[index].toString());
                 },
                 child: Card(
                   shadowColor: Colors.grey,

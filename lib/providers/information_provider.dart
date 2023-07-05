@@ -5,6 +5,8 @@ import 'package:blood_connect/model/news_model.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../screens/pages/mainpage/detail_news.dart';
+
 class InformationProvider extends ChangeNotifier {
   List newsList = [];
   var detailNews;
@@ -38,7 +40,7 @@ class InformationProvider extends ChangeNotifier {
     }
   }
 
-  void newsDetail() async {
+  void newsDetail(BuildContext context, int id) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final String? tokenAuth = prefs.getString('token-auth');
     log("TOKEN : " + tokenAuth!);
@@ -49,13 +51,16 @@ class InformationProvider extends ChangeNotifier {
       'Authorization': "Bearer" + tokenAuth!
     };
     final _baseUrlNewsDetail =
-        Uri.parse('https://api.bloodconnect.social/api/getNews/1');
+        Uri.parse('https://api.bloodconnect.social/api/getNews/$id');
     final responseNewsDetail =
         await http.get(_baseUrlNewsDetail, headers: requestHeaders);
     log("NewsDetail :$_baseUrlNewsDetail\n StatusCode : ${responseNewsDetail.statusCode.toString()}\n Response : ${responseNewsDetail.body} ");
     if (responseNewsDetail.statusCode == 200) {
       Object dataDetail = jsonDecode(responseNewsDetail.body)["data"];
       detailNews = dataDetail;
+
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (builder) => DetailNews()));
       notifyListeners();
     } else {}
   }
@@ -116,6 +121,28 @@ class InformationProvider extends ChangeNotifier {
     };
     final _baseUddStokDarah =
         Uri.parse('https://api.bloodconnect.social/api/pmi/jadwal');
+    final responseNewsDetail =
+        await http.get(_baseUddStokDarah, headers: requestHeaders);
+    log("Mobil Unit:$_baseUddStokDarah\n StatusCode : ${responseNewsDetail.statusCode.toString()}\n Response : ${responseNewsDetail.body} ");
+    if (responseNewsDetail.statusCode == 200) {
+      List dataDetailMobilUnit = jsonDecode(responseNewsDetail.body)["data"];
+      jadwalMobileUnit = dataDetailMobilUnit;
+      notifyListeners();
+    } else {}
+  }
+
+  void searchMu(String search) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String? tokenAuth = prefs.getString('token-auth');
+    log("TOKEN : " + tokenAuth!);
+
+    Map<String, String> requestHeaders = {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': "Bearer" + tokenAuth!
+    };
+    final _baseUddStokDarah = Uri.parse(
+        'https://api.bloodconnect.social/api/pmi/jadwal/search?keyword=dffghdhd');
     final responseNewsDetail =
         await http.get(_baseUddStokDarah, headers: requestHeaders);
     log("Mobil Unit:$_baseUddStokDarah\n StatusCode : ${responseNewsDetail.statusCode.toString()}\n Response : ${responseNewsDetail.body} ");

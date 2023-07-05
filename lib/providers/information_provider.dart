@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class InformationProvider extends ChangeNotifier {
   List newsList = [];
-  List detailNews = [];
+  var detailNews;
   var stokDarah;
 
   List jadwalMobileUnit = [];
@@ -54,7 +54,7 @@ class InformationProvider extends ChangeNotifier {
         await http.get(_baseUrlNewsDetail, headers: requestHeaders);
     log("NewsDetail :$_baseUrlNewsDetail\n StatusCode : ${responseNewsDetail.statusCode.toString()}\n Response : ${responseNewsDetail.body} ");
     if (responseNewsDetail.statusCode == 200) {
-      List dataDetail = jsonDecode(responseNewsDetail.body)["data"];
+      Object dataDetail = jsonDecode(responseNewsDetail.body)["data"];
       detailNews = dataDetail;
       notifyListeners();
     } else {}

@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/screens/onboarding_one.dart';
 import 'package:blood_connect/screens/pages/bottomnav/bottom_navigation.dart';
@@ -30,7 +29,6 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-
     openSplashScreen();
     super.initState();
   }

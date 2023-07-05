@@ -18,6 +18,7 @@ class WidgetMobileUnit extends StatelessWidget {
                     BoxDecoration(borderRadius: BorderRadius.circular(10)),
                 margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5.0),
                 width: MediaQuery.of(context).size.width,
+                height: 100,
                 child: Card(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,10 +32,25 @@ class WidgetMobileUnit extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(state.jadwalMobileUnit[index]["Instansi"]),
-                              Text(state.jadwalMobileUnit[index]["Waktu"]),
-                              Text(state.jadwalMobileUnit[index]["Target"]),
-                              Text(state.jadwalMobileUnit[index]["Alamat"]),
+                              Text(
+                                state.jadwalMobileUnit[index]["Instansi"],
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontFamily: 'Poppins',
+                                    fontWeight: FontWeight.w300),
+                              ),
+                              Text(
+                                state.jadwalMobileUnit[index]["Waktu"],
+                                style: TextStyle(fontFamily: 'Poppins'),
+                              ),
+                              Text(
+                                'Target Donor :${state.jadwalMobileUnit[index]["Target"]}',
+                                style: TextStyle(fontFamily: 'Poppins'),
+                              ),
+                              Text(
+                                state.jadwalMobileUnit[index]["Alamat"],
+                                style: TextStyle(fontFamily: 'Poppins'),
+                              ),
                             ],
                           )
                         ],

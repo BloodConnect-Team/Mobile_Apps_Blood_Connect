@@ -191,9 +191,14 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
 
 //On Boarding Tree
 
-class OnboardingTree extends StatelessWidget {
+class OnboardingTree extends StatefulWidget {
   const OnboardingTree({super.key});
 
+  @override
+  State<OnboardingTree> createState() => _OnboardingTreeState();
+}
+
+class _OnboardingTreeState extends State<OnboardingTree> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

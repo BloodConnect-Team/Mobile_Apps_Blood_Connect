@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
           create: (context) => InformationProvider()
             ..news()
             ..stokUdd()
+            ..newsDetail()
             ..listJadwalMobileUnit(),
         ),
       ],

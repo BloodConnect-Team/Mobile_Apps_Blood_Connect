@@ -225,7 +225,8 @@ class HomePageScreen extends StatelessWidget {
                     fontSize: 17),
               ),
             ),
-            const NewsHomePage(),
+            Padding(
+                padding: EdgeInsets.only(left: 20.0), child: NewsHomePage()),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
               child: Text(
@@ -237,97 +238,108 @@ class HomePageScreen extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-              width: MediaQuery.of(context).size.width,
-              color: primaryColor,
-              child: ExpansionTile(
-                title: Text(
-                  'Mengapa Kita Harus Bayar Ketika kita Butuh Darah Dari PMI ?',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 13,
-                      color: Colors.white),
-                ),
+              margin: EdgeInsets.symmetric(horizontal: 10.0),
+              child: Column(
                 children: [
-                  ColoredBox(
-                    color: Colors.white,
-                    child: ListTile(
+                  Container(
+                    margin:
+                        EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                    width: MediaQuery.of(context).size.width,
+                    color: primaryColor,
+                    child: ExpansionTile(
                       title: Text(
-                          'Biaya yang kita keluarkan perkantong darah sebenarnya adalah biaya penggantian pemeliharaan darah, supaya kondisinya tetap sama seperti saat berada dalam tubuh kita.'),
+                        'Mengapa Kita Harus Bayar Ketika kita Butuh Darah Dari PMI ?',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13,
+                            color: Colors.white),
+                      ),
+                      children: [
+                        ColoredBox(
+                          color: Colors.white,
+                          child: ListTile(
+                            title: Text(
+                                'Biaya yang kita keluarkan perkantong darah sebenarnya adalah biaya penggantian pemeliharaan darah, supaya kondisinya tetap sama seperti saat berada dalam tubuh kita.'),
+                          ),
+                        )
+                      ],
                     ),
-                  )
+                  ),
+                  Container(
+                    margin:
+                        EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                    width: MediaQuery.of(context).size.width,
+                    color: primaryColor,
+                    child: ExpansionTile(
+                      title: Text(
+                        'Mengapa Kita Perlu Donor Darah ?',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13,
+                            color: Colors.white),
+                      ),
+                      children: [
+                        ColoredBox(
+                          color: Colors.white,
+                          child: ListTile(
+                            title: Text(
+                                'Rajin mendonorkan darah kira-kira mampu menurunkan risiko serangan jantung hingga 88 persen. Tak hanya itu, mendonorkan darah juga bisa meminimalkan risiko kanker, stroke, dan serangan jantung. Menariknya lagi, manfaat donor darah juga bisa membuat kadar zat besi dalam darah jadi stabil.'),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin:
+                        EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                    width: MediaQuery.of(context).size.width,
+                    color: primaryColor,
+                    child: ExpansionTile(
+                      title: Text(
+                        'Kenapa Kita Membutuhkan Darah Prosesnya Lama ?',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13,
+                            color: Colors.white),
+                      ),
+                      children: [
+                        ColoredBox(
+                          color: Colors.white,
+                          child: ListTile(
+                            title: Text(
+                                'Secara umum, proses transfusi darah dapat berlangsung selama 1 sampai 4  jam, atau bisa lebih cepat. Tahap-tahap yang dilakukan oleh dokter pada proses transfusi darah antara lain: Meminta pasien untuk berbaring di tempat tidur'),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin:
+                        EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                    width: MediaQuery.of(context).size.width,
+                    color: primaryColor,
+                    child: ExpansionTile(
+                      title: Text(
+                        'Apa yang harus kita persiapkan Sebelum Donor ?',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13,
+                            color: Colors.white),
+                      ),
+                      children: [
+                        ColoredBox(
+                          color: Colors.white,
+                          child: ListTile(
+                            title: Text(
+                                "Berat badan minimal 45 kilogram.Tekanan darah di atas 90/50 dan di bawah 180/100.Suhu tubuh antara 36,6-37,5 derajat Celsius.Tidak boleh dalam kondisi hamil.Hemoglobin wanita minimal 12 gram% dan pria minimal 13 gram%."),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-              width: MediaQuery.of(context).size.width,
-              color: primaryColor,
-              child: ExpansionTile(
-                title: Text(
-                  'Mengapa Kita Perlu Donor Darah ?',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 13,
-                      color: Colors.white),
-                ),
-                children: [
-                  ColoredBox(
-                    color: Colors.white,
-                    child: ListTile(
-                      title: Text(
-                          'Rajin mendonorkan darah kira-kira mampu menurunkan risiko serangan jantung hingga 88 persen. Tak hanya itu, mendonorkan darah juga bisa meminimalkan risiko kanker, stroke, dan serangan jantung. Menariknya lagi, manfaat donor darah juga bisa membuat kadar zat besi dalam darah jadi stabil.'),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-              width: MediaQuery.of(context).size.width,
-              color: primaryColor,
-              child: ExpansionTile(
-                title: Text(
-                  'Kenapa Kita Membutuhkan Darah Prosesnya Lama ?',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 13,
-                      color: Colors.white),
-                ),
-                children: [
-                  ColoredBox(
-                    color: Colors.white,
-                    child: ListTile(
-                      title: Text(
-                          'Secara umum, proses transfusi darah dapat berlangsung selama 1 sampai 4  jam, atau bisa lebih cepat. Tahap-tahap yang dilakukan oleh dokter pada proses transfusi darah antara lain: Meminta pasien untuk berbaring di tempat tidur'),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-              width: MediaQuery.of(context).size.width,
-              color: primaryColor,
-              child: ExpansionTile(
-                title: Text(
-                  'Apa yang harus kita persiapkan Sebelum Donor ?',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 13,
-                      color: Colors.white),
-                ),
-                children: [
-                  ColoredBox(
-                    color: Colors.white,
-                    child: ListTile(
-                      title: Text(
-                          "Berat badan minimal 45 kilogram.Tekanan darah di atas 90/50 dan di bawah 180/100.Suhu tubuh antara 36,6-37,5 derajat Celsius.Tidak boleh dalam kondisi hamil.Hemoglobin wanita minimal 12 gram% dan pria minimal 13 gram%."),
-                    ),
-                  )
-                ],
-              ),
-            ),
+            )
           ],
         ),
       ),

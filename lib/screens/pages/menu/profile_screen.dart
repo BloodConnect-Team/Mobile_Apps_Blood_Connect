@@ -150,7 +150,10 @@ class ProfileScreen extends StatelessWidget {
                   height: 20,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Provider.of<ProfileProvider>(context, listen: false)
+                        .logout(context);
+                  },
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     child: Row(

@@ -36,9 +36,7 @@ class MyApp extends StatelessWidget {
             ..listJadwalMobileUnit(),
         ),
         ChangeNotifierProvider(
-          create: (context) => DonorProvider()
-            ..donorReqAll()
-            ..detailReq(),
+          create: (context) => DonorProvider()..donorReqAll(),
         )
       ],
       child: MaterialApp(

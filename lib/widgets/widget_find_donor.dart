@@ -18,8 +18,7 @@ class WidgetFindDonor extends StatelessWidget {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (builder) => PermintaanDetailDonor()));
+                    state.detailRequest(context, state.donorReq[index]["id"]);
                   },
                   child: Container(
                     color: Colors.white,

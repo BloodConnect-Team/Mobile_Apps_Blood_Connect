@@ -1,6 +1,7 @@
 import 'package:blood_connect/providers/donor_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../color/color.dart';
 
@@ -12,6 +13,8 @@ class WidgetPermintaanDonor extends StatefulWidget {
 }
 
 class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
+  final webUri = Uri.parse('https://bloodconnect.social/link/ML128736');
+
   @override
   Widget build(BuildContext context) {
     return Consumer<DonorProvider>(builder: (context, state, child) {
@@ -99,7 +102,7 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
                           height: 10,
                         ),
                         Text(
-                          'O+ (O Rhesus Positif)',
+                          state.detailRequestClient["GolonganDarah"],
                           style: TextStyle(fontSize: 17),
                         ),
                         SizedBox(
@@ -107,11 +110,17 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
                         ),
                         Text(
                           'Jenis Donor :',
-                          style: TextStyle(fontSize: 17, color: Colors.grey),
+                          style: TextStyle(fontSize: 20, color: Colors.grey),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Text(
                           state.detailRequestClient["JenisDonor"],
                           style: TextStyle(fontSize: 17, color: Colors.black),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Text(
                           'Kebutuhan :',
@@ -135,7 +144,7 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
                           height: 10,
                         ),
                         Text(
-                          'Dibutuhkan Segera 5 Kantong Darahsdfdsfsdsdgsdgdsgsdgsd',
+                          state.detailRequestClient["Catatan"],
                           style: TextStyle(fontSize: 17),
                         ),
                       ],
@@ -158,7 +167,9 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
                 ),
                 Expanded(
                     child: Text(
-                        "sjfnsnfsjnfjsnjfnjsnfdsdfd \n dsdgdsgdfnjsfndjnfjdnfjdnfjdnfjndfn"))
+                  state.detailRequestClient["BDRS"],
+                  style: TextStyle(fontSize: 20),
+                ))
               ],
             ),
           ),
@@ -187,7 +198,7 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
                           primary: primaryColor,
                         ),
                         onPressed: () {},
-                        child: Text("Terpenuhi"))),
+                        child: Text("Hubungi"))),
               ),
               Padding(
                 padding: EdgeInsets.only(right: 10),
@@ -195,7 +206,11 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
                     style: ElevatedButton.styleFrom(
                       primary: primaryColor,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      var a = state.detailRequestClient["Link"];
+                      setState(() =>
+                          launchUrl(a as Uri, mode: LaunchMode.inAppWebView));
+                    },
                     child: Icon(Icons.share_outlined)),
               )
             ],

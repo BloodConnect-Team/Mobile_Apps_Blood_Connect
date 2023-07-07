@@ -116,7 +116,6 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
     return Scaffold(
       body: InkWell(
         child: Container(
-          margin: const EdgeInsets.all(25),
           child: Column(
             children: [
               Container(

@@ -1,7 +1,9 @@
 import 'package:blood_connect/color/color.dart';
+import 'package:blood_connect/providers/donor_provider.dart';
 import 'package:blood_connect/widgets/button_goldar.dart';
 import 'package:blood_connect/widgets/widget_find_donor.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -44,6 +46,10 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: SizedBox(
                   height: 50,
                   child: TextField(
+                    onChanged: (value) {
+                      Provider.of<DonorProvider>(context, listen: false)
+                          .searchDetailRequest(value);
+                    },
                     decoration: InputDecoration(
                       fillColor: Colors.white,
                       filled: true,

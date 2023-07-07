@@ -36,7 +36,6 @@ class InformationProvider extends ChangeNotifier {
       log("HAILLLLLL + " + newsList.toString());
       notifyListeners();
     } else {
-      Text("Error Not Found");
       log("Failed");
     }
   }

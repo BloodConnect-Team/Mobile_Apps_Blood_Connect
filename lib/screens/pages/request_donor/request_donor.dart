@@ -1,6 +1,7 @@
 import 'package:blood_connect/color/color.dart';
 import 'package:blood_connect/screens/pages/request_donor/request_succes.dart';
 import 'package:flutter/material.dart';
+import 'package:select_form_field/select_form_field.dart';
 
 class RequestDonor extends StatefulWidget {
   const RequestDonor({super.key});
@@ -22,15 +23,28 @@ class _RequestDonorState extends State<RequestDonor> {
                 height: 20,
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    border: Border.all(color: Colors.black45),
+                    borderRadius: BorderRadius.circular(10.0)),
+                child: SelectFormField(
+                  icon: Icon(
+                    Icons.location_city_outlined,
+                    color: primaryColor,
+                  ),
+                  labelText: 'Rumah Sakit',
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                 child: Column(
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
-                          hintText: 'Rumah Sakit',
-                          prefixIcon: Icon(Icons.location_city),
+                          labelText: "Username",
+                          hintText: 'Nama',
+                          prefixIcon: Icon(Icons.location_on_outlined),
                           border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(10),
@@ -42,21 +56,31 @@ class _RequestDonorState extends State<RequestDonor> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                child: Column(
-                  children: [
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: 'Nama Pasien',
-                          prefixIcon: Icon(Icons.location_history),
-                          border: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                          ),
-                          prefixIconColor: primaryColor),
-                    )
-                  ],
+                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black45),
+                    borderRadius: BorderRadius.circular(10.0)),
+                child: SelectFormField(
+                  icon: Icon(
+                    Icons.bloodtype_outlined,
+                    color: primaryColor,
+                  ),
+                  labelText: 'Jenis Darah',
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black45),
+                    borderRadius: BorderRadius.circular(10.0)),
+                child: SelectFormField(
+                  icon: Icon(
+                    Icons.bloodtype_outlined,
+                    color: primaryColor,
+                  ),
+                  labelText: 'Golongan Darah',
                 ),
               ),
               Container(
@@ -65,44 +89,9 @@ class _RequestDonorState extends State<RequestDonor> {
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
-                          hintText: 'Golongan Darah',
-                          prefixIcon: Icon(Icons.bloodtype_rounded),
-                          border: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                          ),
-                          prefixIconColor: primaryColor),
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                child: Column(
-                  children: [
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: 'Jenis Darah',
-                          prefixIcon: Icon(Icons.bloodtype_sharp),
-                          border: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                          ),
-                          prefixIconColor: primaryColor),
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                child: Column(
-                  children: [
-                    TextFormField(
-                      decoration: InputDecoration(
-                        hintText: 'Jumlah Kantong',
-                        prefixIcon: Icon(Icons.bloodtype_rounded),
+                        labelText: "Jumlah Kantong",
+                        hintText: '10 kantong',
+                        prefixIcon: Icon(Icons.bloodtype_outlined),
                         prefixIconColor: primaryColor,
                         border: const OutlineInputBorder(
                           borderRadius: BorderRadius.all(
@@ -120,6 +109,7 @@ class _RequestDonorState extends State<RequestDonor> {
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
+                          labelText: '0812XXXXXXXXX',
                           hintText: 'Nomor Hp',
                           prefixIcon: Icon(Icons.call),
                           border: const OutlineInputBorder(
@@ -138,8 +128,9 @@ class _RequestDonorState extends State<RequestDonor> {
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
-                          hintText: 'Catatan',
-                          prefixIcon: Icon(Icons.book),
+                          hintText: 'note',
+                          label: Text("Catatan"),
+                          prefixIcon: Icon(Icons.book_online_outlined),
                           border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(10),

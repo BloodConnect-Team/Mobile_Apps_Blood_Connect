@@ -37,9 +37,18 @@ class _OnboardingOneState extends State<OnboardingOne> {
               const SizedBox(
                 height: 10,
               ),
-              const Text('Bantu orang Lain'),
-              const Text('Temukan Kebutuhan Darah '),
-              const Text('Disekitarmu'),
+              const Text(
+                'Bantu orang Lain',
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+              ),
+              const Text(
+                'Temukan Kebutuhan Darah ',
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+              ),
+              const Text(
+                'Disekitarmu',
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+              ),
               const SizedBox(
                 height: 30,
               ),
@@ -131,9 +140,18 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
               const SizedBox(
                 height: 10,
               ),
-              const Text('Jadilah Pahlawan'),
-              const Text('bagikan kebutuhan darah'),
-              const Text('untukmu,Temanmu dan orang sekitarmu'),
+              const Text(
+                'Jadilah Pahlawan',
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+              ),
+              const Text(
+                'bagikan kebutuhan darah',
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+              ),
+              const Text(
+                'untukmu,Temanmu dan orang sekitarmu',
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+              ),
               const SizedBox(
                 height: 30,
               ),
@@ -230,7 +248,7 @@ class _OnboardingTreeState extends State<OnboardingTree> {
                 'Connected For Life',
                 style: TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.normal,
+                    fontWeight: FontWeight.w500,
                     decorationColor: Colors.black),
               ),
               const SizedBox(

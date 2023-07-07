@@ -142,7 +142,7 @@ class InformationProvider extends ChangeNotifier {
       'Authorization': "Bearer" + tokenAuth!
     };
     final _baseUddStokDarah = Uri.parse(
-        'https://api.bloodconnect.social/api/pmi/jadwal/search?keyword=dffghdhd');
+        'https://api.bloodconnect.social/api/pmi/jadwal/search?keyword=$search');
     final responseNewsDetail =
         await http.get(_baseUddStokDarah, headers: requestHeaders);
     log("Mobil Unit:$_baseUddStokDarah\n StatusCode : ${responseNewsDetail.statusCode.toString()}\n Response : ${responseNewsDetail.body} ");

@@ -1,4 +1,5 @@
 import 'package:blood_connect/data/repository/repository_post.dart';
+import 'package:blood_connect/model/update_profile_model.dart';
 import 'package:blood_connect/screens/pages/bottomnav/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -74,8 +75,4 @@ class authProvider extends ChangeNotifier {
       ScaffoldMessenger.of(context).showSnackBar(snackbar);
     }
   }
-
-  void logout() {}
-
-  void loginAutomation() {}
 }

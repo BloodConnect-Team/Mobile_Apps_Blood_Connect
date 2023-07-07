@@ -11,7 +11,6 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  var _clearSearch = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,17 +44,10 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: SizedBox(
                   height: 50,
                   child: TextField(
-                    controller: _clearSearch,
                     decoration: InputDecoration(
                       fillColor: Colors.white,
                       filled: true,
                       prefixIcon: Icon(Icons.search),
-                      suffixIcon: IconButton(
-                        icon: Icon(Icons.clear),
-                        onPressed: () {
-                          _clearSearch.clear();
-                        },
-                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),

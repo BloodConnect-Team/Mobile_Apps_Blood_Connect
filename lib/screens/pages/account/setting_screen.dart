@@ -15,6 +15,10 @@ class _SettingScreenState extends State<SettingScreen> {
   TextEditingController usernameSetting = TextEditingController();
   TextEditingController emailSetting = TextEditingController();
   TextEditingController noHp = TextEditingController();
+
+  String? selectedForm;
+
+  String? selectedBlood;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,31 +83,59 @@ class _SettingScreenState extends State<SettingScreen> {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              width: MediaQuery.of(context).size.width,
+              margin: EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black45),
+                  border: Border.all(width: 1.0, color: Colors.black45),
                   borderRadius: BorderRadius.circular(10.0)),
-              child: SelectFormField(
-                icon: Icon(
-                  Icons.location_on_outlined,
-                  color: primaryColor,
+              child: Padding(
+                padding: EdgeInsets.only(left: 10.0),
+                child: DropdownButton<String?>(
+                  value: selectedForm,
+                  onChanged: (value) {
+                    setState(() {
+                      selectedForm = value;
+                    });
+                  },
+                  isExpanded: true,
+                  iconSize: 40.0,
+                  iconDisabledColor: primaryColor,
+                  items: ["Lhokseumawe"]
+                      .map<DropdownMenuItem<String?>>((e) => DropdownMenuItem(
+                            child: Text(e.toString()),
+                            value: e,
+                          ))
+                      .toList(),
                 ),
-                labelText: 'Kota',
               ),
             ),
+            SizedBox(
+              height: 10.0,
+            ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              width: MediaQuery.of(context).size.width,
+              margin: EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black45),
-                  borderRadius: BorderRadius.circular(10.0)),
-              child: SelectFormField(
-                icon: Icon(
-                  Icons.bloodtype_outlined,
-                  color: primaryColor,
+                border: Border.all(width: 1.0, color: Colors.black45),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Padding(
+                padding: EdgeInsets.only(left: 10.0),
+                child: DropdownButton<String?>(
+                  value: selectedBlood,
+                  onChanged: (value) {
+                    setState(() {
+                      selectedBlood = value;
+                    });
+                  },
+                  isExpanded: true,
+                  iconSize: 40.0,
+                  iconDisabledColor: primaryColor,
+                  items: ["A+", "A-", "B+", "B-", "O+", "O-", "AB-", "AB+"]
+                      .map<DropdownMenuItem<String?>>((e) => DropdownMenuItem(
+                            child: Text(e.toString()),
+                            value: e,
+                          ))
+                      .toList(),
                 ),
-                labelText: 'A+',
               ),
             ),
             Container(

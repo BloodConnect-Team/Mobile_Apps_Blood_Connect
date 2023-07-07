@@ -1,5 +1,7 @@
+import 'package:blood_connect/providers/information_provider.dart';
 import 'package:blood_connect/widgets/widget_mobile_unit.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MobileUnitScreen extends StatefulWidget {
   const MobileUnitScreen({super.key});
@@ -36,11 +38,13 @@ class _MobileUnitScreenState extends State<MobileUnitScreen> {
             child: SizedBox(
               height: 50,
               child: TextField(
-                onChanged: null,
+                onChanged: (value) {
+                  Provider.of<InformationProvider>(context, listen: false)
+                      .searchMu(value);
+                },
                 decoration: InputDecoration(
                     hintText: 'Search .......',
-                    suffixIcon: IconButton(
-                        onPressed: () {}, icon: const Icon(Icons.search)),
+                    suffixIcon: Icon(Icons.search),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0))),
               ),

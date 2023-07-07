@@ -3,6 +3,7 @@ import 'package:blood_connect/providers/profile_provider.dart';
 import 'package:blood_connect/screens/pages/account/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -127,6 +128,9 @@ class ProfileScreen extends StatelessWidget {
                   height: 20,
                 ),
                 GestureDetector(
+                  onTap: () {
+                    emailHelp();
+                  },
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     child: Row(
@@ -179,5 +183,27 @@ class ProfileScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void emailHelp() async {
+    String? encodeQueryParameters(Map<String, String> params) {
+      return params.entries
+          .map((MapEntry<String, String> e) =>
+              '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+          .join('&');
+    }
+
+    final Uri emailKontak = Uri(
+        scheme: 'mailto',
+        path: 'bloodConnect.social@gmail.com',
+        query: encodeQueryParameters(<String, String>{
+          'subject': 'Butuh Bantuan! Ketikkan Pesan Anda di bawah ini',
+          'body': '... ',
+        }));
+    if (await canLaunchUrl(emailKontak) == false) {
+      launchUrl(emailKontak);
+    } else {
+      throw Exception('email tidak ditemukan $emailKontak');
+    }
   }
 }

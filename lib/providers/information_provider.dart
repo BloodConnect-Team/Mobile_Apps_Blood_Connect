@@ -13,6 +13,7 @@ class InformationProvider extends ChangeNotifier {
   var stokDarah;
 
   List jadwalMobileUnit = [];
+  List notificationList = [];
 
   void news() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -151,5 +152,29 @@ class InformationProvider extends ChangeNotifier {
       jadwalMobileUnit = dataDetailMobilUnit;
       notifyListeners();
     } else {}
+  }
+
+  void notificationHome() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String? tokenAuth = prefs.getString('token-auth');
+    log("TOKEN : " + tokenAuth!);
+
+    Map<String, String> requestHeaders = {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': "Bearer" + tokenAuth!
+    };
+    final _baseUddStokDarah =
+        Uri.parse('https://api.bloodconnect.social/api/notification');
+    final responseNewsDetail =
+        await http.get(_baseUddStokDarah, headers: requestHeaders);
+    log("notification:$_baseUddStokDarah\n StatusCode : ${responseNewsDetail.statusCode.toString()}\n Response : ${responseNewsDetail.body} ");
+    if (responseNewsDetail.statusCode == 200) {
+      List dataDetailMobilUnit = jsonDecode(responseNewsDetail.body)["data"];
+      notificationList = dataDetailMobilUnit;
+      notifyListeners();
+    } else {
+      print("Notification: gagal");
+    }
   }
 }

@@ -105,6 +105,12 @@ class ProfileScreen extends StatelessWidget {
                   height: 20,
                 ),
                 GestureDetector(
+                  onTap: () {
+                    launchUrl(
+                        Uri.parse(
+                            'https://bloodconnect.social/kebijakan-privasi'),
+                        mode: LaunchMode.inAppWebView);
+                  },
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     child: Row(

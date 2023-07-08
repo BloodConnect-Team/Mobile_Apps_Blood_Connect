@@ -15,10 +15,9 @@ class _SettingScreenState extends State<SettingScreen> {
   TextEditingController usernameSetting = TextEditingController();
   TextEditingController emailSetting = TextEditingController();
   TextEditingController noHp = TextEditingController();
+  String selectLocation = '';
+  String selectDarah = '';
 
-  String? selectedForm;
-
-  String? selectedBlood;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,65 +82,107 @@ class _SettingScreenState extends State<SettingScreen> {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.0),
+              margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                  border: Border.all(width: 1.0, color: Colors.black45),
+                  border: Border.all(color: Colors.black45),
                   borderRadius: BorderRadius.circular(10.0)),
-              child: Padding(
-                padding: EdgeInsets.only(left: 10.0),
-                child: DropdownButton<String?>(
-                  value: selectedForm,
-                  onChanged: (value) {
-                    setState(() {
-                      selectedForm = value;
-                    });
+              child: SelectFormField(
+                onChanged: (value) => selectLocation = value,
+                items: [
+                  {
+                    'value': 'Lhokseumawe',
+                    'label': 'Lhokseumawe',
+                    'icon': Icon(Icons.location_on),
                   },
-                  isExpanded: true,
-                  iconSize: 40.0,
-                  iconDisabledColor: primaryColor,
-                  items: ["Lhokseumawe"]
-                      .map<DropdownMenuItem<String?>>((e) => DropdownMenuItem(
-                            child: Text(e.toString()),
-                            value: e,
-                          ))
-                      .toList(),
-                ),
+                ],
+                decoration: InputDecoration(
+                    label: Text("Lhokseumawe"),
+                    prefixIcon: Icon(Icons.location_on),
+                    suffixIcon: Icon(Icons.arrow_drop_down),
+                    border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                    prefixIconColor: primaryColor),
               ),
             ),
             SizedBox(
               height: 10.0,
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.0),
+              margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                border: Border.all(width: 1.0, color: Colors.black45),
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: Padding(
-                padding: EdgeInsets.only(left: 10.0),
-                child: DropdownButton<String?>(
-                  value: selectedBlood,
-                  onChanged: (value) {
-                    setState(() {
-                      selectedBlood = value;
-                    });
+                  border: Border.all(color: Colors.black45),
+                  borderRadius: BorderRadius.circular(10.0)),
+              child: SelectFormField(
+                onChanged: (value) => selectDarah = value,
+                items: [
+                  {
+                    'value': 'A+',
+                    'label': ' A+',
+                    'icon': Icon(Icons.bloodtype),
                   },
-                  isExpanded: true,
-                  iconSize: 40.0,
-                  iconDisabledColor: primaryColor,
-                  items: ["A+", "A-", "B+", "B-", "O+", "O-", "AB-", "AB+"]
-                      .map<DropdownMenuItem<String?>>((e) => DropdownMenuItem(
-                            child: Text(e.toString()),
-                            value: e,
-                          ))
-                      .toList(),
+                  {
+                    'value': 'A-',
+                    'label': ' A-',
+                    'icon': Icon(Icons.bloodtype),
+                  },
+                  {
+                    'value': 'B+',
+                    'label': ' B+',
+                    'icon': Icon(Icons.bloodtype),
+                  },
+                  {
+                    'value': 'B-',
+                    'label': ' B-',
+                    'icon': Icon(Icons.bloodtype),
+                  },
+                  {
+                    'value': 'AB+',
+                    'label': ' AB+',
+                    'icon': Icon(Icons.bloodtype),
+                  },
+                  {
+                    'value': 'AB-',
+                    'label': ' AB-',
+                    'icon': Icon(Icons.bloodtype),
+                  },
+                  {
+                    'value': 'O+',
+                    'label': ' O+',
+                    'icon': Icon(Icons.bloodtype),
+                  },
+                  {
+                    'value': 'O-',
+                    'label': ' O-',
+                    'icon': Icon(Icons.bloodtype),
+                  },
+                ],
+                decoration: InputDecoration(
+                    label: Text("Golongan Darah"),
+                    prefixIcon: Icon(Icons.bloodtype_rounded),
+                    suffixIcon: Icon(Icons.arrow_drop_down),
+                    border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                    prefixIconColor: primaryColor),
+                icon: Icon(
+                  Icons.bloodtype_outlined,
+                  color: primaryColor,
                 ),
+                labelText: 'Golongan Darah',
               ),
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
               width: MediaQuery.of(context).size.width,
               child: TextFormField(
+                controller: noHp,
                 decoration: InputDecoration(
                     hintText: '0822xxxxxxx',
                     label: Text('Contoh : 0822115XXXXXX'),
@@ -155,7 +196,15 @@ class _SettingScreenState extends State<SettingScreen> {
               margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
               width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Provider.of<ProfileProvider>(context, listen: false)
+                        .updateProfile(context,
+                            username: usernameSetting.text,
+                            email: emailSetting.text,
+                            goldar: selectDarah,
+                            city: selectLocation,
+                            phone_number: noHp.text);
+                  },
                   style: ElevatedButton.styleFrom(
                     primary: primaryColor,
                     shape: const RoundedRectangleBorder(

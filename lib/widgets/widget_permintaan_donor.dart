@@ -1,6 +1,7 @@
 import 'package:blood_connect/providers/donor_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:social_share/social_share.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../color/color.dart';
@@ -13,13 +14,27 @@ class WidgetPermintaanDonor extends StatefulWidget {
 }
 
 class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
-  final webUri = Uri.parse('https://bloodconnect.social/link/ML128736');
-
   @override
   Widget build(BuildContext context) {
     return Consumer<DonorProvider>(builder: (context, state, child) {
       return Column(
         children: [
+          Padding(
+            padding: EdgeInsets.only(left: 20.0, top: 20),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.location_on,
+                  color: Colors.redAccent,
+                ),
+                Expanded(
+                    child: Text(
+                  state.detailRequestClient["BDRS"],
+                  style: TextStyle(fontSize: 20),
+                ))
+              ],
+            ),
+          ),
           SizedBox(
             height: 20,
           ),
@@ -157,35 +172,20 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
           SizedBox(
             height: 10.0,
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 10.0, bottom: 20, top: 20),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.location_on,
-                  color: Colors.redAccent,
-                ),
-                Expanded(
-                    child: Text(
-                  state.detailRequestClient["BDRS"],
-                  style: TextStyle(fontSize: 20),
-                ))
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 10),
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10), color: Colors.blue),
-            height: 200,
-            child: Center(
-              child: Text("Map"),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
+
+          // Container(
+          //   margin: EdgeInsets.symmetric(horizontal: 10),
+          //   width: MediaQuery.of(context).size.width,
+          //   decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.circular(10), color: Colors.blue),
+          //   height: 200,
+          //   child: Center(
+          //     child: Text("Map"),
+          //   ),
+          // ),
+          // SizedBox(
+          //   height: 10,
+          // ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -197,7 +197,11 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
                         style: ElevatedButton.styleFrom(
                           primary: primaryColor,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          launchUrl(
+                              Uri.parse(state.detailRequestClient["WALink"]),
+                              mode: LaunchMode.externalApplication);
+                        },
                         child: Text("Hubungi"))),
               ),
               Padding(
@@ -207,9 +211,8 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
                       primary: primaryColor,
                     ),
                     onPressed: () {
-                      var a = state.detailRequestClient["Link"];
-                      setState(() =>
-                          launchUrl(a as Uri, mode: LaunchMode.inAppWebView));
+                      SocialShare.shareWhatsapp(
+                          state.detailRequestClient["Link"]);
                     },
                     child: Icon(Icons.share_outlined)),
               )

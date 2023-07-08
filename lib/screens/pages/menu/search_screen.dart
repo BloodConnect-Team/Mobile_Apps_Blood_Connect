@@ -48,7 +48,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   child: TextField(
                     onChanged: (value) {
                       Provider.of<DonorProvider>(context, listen: false)
-                          .searchDetailRequest(value);
+                          .searchDetailRequest(keyword: value);
                     },
                     decoration: InputDecoration(
                       fillColor: Colors.white,
@@ -68,7 +68,7 @@ class _SearchScreenState extends State<SearchScreen> {
               const SizedBox(
                 height: 20,
               ),
-              const ButtonGoldar(),
+              ButtonGoldar(),
             ],
           ),
         ),

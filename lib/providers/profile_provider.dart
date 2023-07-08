@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:blood_connect/data/repository/repository_post.dart';
@@ -28,22 +29,41 @@ class ProfileProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void UpdateProfile() async {
+  void updateProfile(
+    BuildContext, {
+    required String username,
+    required String email,
+    required String goldar,
+    required String city,
+    required String phone_number,
+  }) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final String? tokenAuth = prefs.getString('token-auth');
     log("TOKEN : " + tokenAuth!);
 
-    Map<String, String> requestHeaders = {
-      'Content-type': 'application/json',
-      'Accept': 'application/json',
-      'Authorization': "Bearer" + tokenAuth!
+    final Map<String, String> header = {'Authorization': "Bearer" + tokenAuth!};
+
+    final Map<String, String> body = {
+      'name': username,
+      'email': email,
+      'goldar': goldar,
+      'city': city,
+      'phone_number': phone_number,
     };
+
     final _baseUrlUpdateProfile =
         Uri.parse('https://api.bloodconnect.social/api/account/update/1');
-    final responseDetailProfile =
-        await http.put(_baseUrlUpdateProfile, headers: requestHeaders);
+    final responseDetailProfile = await http.post(
+      _baseUrlUpdateProfile,
+      headers: header,
+      body: body,
+    );
     log("Update Profile : $_baseUrlUpdateProfile \n StatusCode : ${responseDetailProfile.statusCode.toString()}  \n Response : ${responseDetailProfile.body}");
-    if (responseDetailProfile.statusCode == 200) {}
+    if (responseDetailProfile.statusCode == 200) {
+      print("Pesan Berhasil di update");
+    } else {
+      print("gagal ");
+    }
   }
 
   void logout(BuildContext context) async {

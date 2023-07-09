@@ -20,7 +20,7 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
       return Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 20.0, top: 20),
+            padding: EdgeInsets.only(left: 150.0, top: 20),
             child: Row(
               children: [
                 Icon(
@@ -41,8 +41,16 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 10),
             decoration: BoxDecoration(
-                color: Colors.grey[400],
-                borderRadius: BorderRadius.circular(10.0)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.white.withOpacity(0.5),
+                    spreadRadius: 3,
+                    blurRadius: 4,
+                    offset: Offset(0, 2),
+                  )
+                ],
+                borderRadius: BorderRadius.circular(10.0),
+                border: Border.all(width: 1.0)),
             width: MediaQuery.of(context).size.width,
             height: 400,
             child: Column(

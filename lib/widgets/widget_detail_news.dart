@@ -17,24 +17,45 @@ class _WidgetDetailNewsState extends State<WidgetDetailNews> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              state.detailNews["Title"],
-              style: TextStyle(fontSize: 17),
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                state.detailNews["Title"],
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
             ),
             SizedBox(
               height: 10,
             ),
-            Text(state.detailNews["date"]),
+            Padding(
+                padding: EdgeInsets.only(left: 10.0),
+                child: Text(state.detailNews["date"])),
             SizedBox(
               height: 10,
             ),
             Container(
-                width: MediaQuery.of(context).size.width,
-                child: Text(state.detailNews["Content"].toString())),
+              margin: EdgeInsets.only(left: 10.0),
+              width: MediaQuery.of(context).size.width - 40,
+              child: Expanded(
+                child: Text(
+                  state.detailNews["Content"].toString(),
+                  style: TextStyle(
+                    height: 2,
+                    letterSpacing: 2,
+                    fontSize: 15,
+                  ),
+                ),
+              ),
+            ),
             SizedBox(
               height: 10,
             ),
-            Text("Ditulis Oleh : ${state.detailNews["Author"]}"),
+            Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  "Ditulis Oleh : ${state.detailNews["Author"]}",
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                )),
           ],
         ),
       );

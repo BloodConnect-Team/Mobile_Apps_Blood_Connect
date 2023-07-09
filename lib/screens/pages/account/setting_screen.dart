@@ -199,6 +199,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   onPressed: () {
                     Provider.of<ProfileProvider>(context, listen: false)
                         .updateProfile(context,
+                            
                             username: usernameSetting.text,
                             email: emailSetting.text,
                             goldar: selectDarah,

@@ -84,7 +84,10 @@ class InformationProvider extends ChangeNotifier {
       Object dataDetail = jsonDecode(responseNewsDetail.body)["data"];
       stokDarah = dataDetail;
       notifyListeners();
-    } else {}
+    } else {
+      CircularProgressIndicator();
+      notifyListeners();
+    }
   }
 
   void listJadwalMobileUnit() async {

@@ -115,7 +115,10 @@ class DonorProvider extends ChangeNotifier {
       Navigator.of(context).push(
           MaterialPageRoute(builder: (builder) => PermintaanDetailDonor()));
       notifyListeners();
-    } else {}
+    } else {
+      CircularProgressIndicator();
+      notifyListeners();
+    }
   }
 
   void postDataRequest(BuildContext context,
@@ -206,7 +209,7 @@ class DonorProvider extends ChangeNotifier {
       riwayatPermintaan = dataDetailPermintaan;
       notifyListeners();
     } else {
-      Text('not Found ');
+      CircularProgressIndicator();
       notifyListeners();
     }
   }

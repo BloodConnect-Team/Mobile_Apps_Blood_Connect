@@ -25,7 +25,7 @@ class _HistoryDonorState extends State<HistoryDonor> {
             margin: EdgeInsets.all(10.0),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.grey[400]),
+                border: Border.all(width: 1.0)),
             child: Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,14 +65,17 @@ class _HistoryDonorState extends State<HistoryDonor> {
                                         padding: EdgeInsets.only(right: 10),
                                         child: ElevatedButton(
                                             style: ElevatedButton.styleFrom(
-                                              primary: primaryColor,
+                                              primary: Colors.white,
                                             ),
                                             onPressed: () {
                                               SocialShare.shareWhatsapp(
                                                   state.riwayatPermintaan[index]
                                                       ["Link"]);
                                             },
-                                            child: Icon(Icons.share_outlined)),
+                                            child: Icon(
+                                              Icons.share_outlined,
+                                              color: Colors.redAccent,
+                                            )),
                                       ),
                                     ],
                                   ),
@@ -105,15 +108,17 @@ class _HistoryDonorState extends State<HistoryDonor> {
                                             padding: EdgeInsets.only(right: 10),
                                             child: ElevatedButton(
                                                 style: ElevatedButton.styleFrom(
-                                                  primary: primaryColor,
+                                                  primary: Colors.white,
                                                 ),
                                                 onPressed: () {
                                                   SocialShare.shareWhatsapp(
                                                       state.riwayatPermintaan[
                                                           index]["Link"]);
                                                 },
-                                                child:
-                                                    Icon(Icons.share_outlined)),
+                                                child: Icon(
+                                                  Icons.share_outlined,
+                                                  color: Colors.redAccent,
+                                                )),
                                           ),
                                         ],
                                       ),
@@ -151,7 +156,7 @@ class _HistoryDonorState extends State<HistoryDonor> {
                                                 child: ElevatedButton(
                                                     style: ElevatedButton
                                                         .styleFrom(
-                                                      primary: primaryColor,
+                                                      primary: Colors.white,
                                                     ),
                                                     onPressed: () {
                                                       SocialShare.shareWhatsapp(
@@ -159,7 +164,9 @@ class _HistoryDonorState extends State<HistoryDonor> {
                                                               index]["Link"]);
                                                     },
                                                     child: Icon(
-                                                        Icons.share_outlined)),
+                                                      Icons.share_outlined,
+                                                      color: Colors.redAccent,
+                                                    )),
                                               ),
                                             ],
                                           ),
@@ -226,9 +233,12 @@ class _HistoryDonorState extends State<HistoryDonor> {
                           SizedBox(
                             height: 10,
                           ),
-                          Text(
-                            state.riwayatPermintaan[index]["Catatan"],
-                            style: TextStyle(fontSize: 17),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 20.0),
+                            child: Text(
+                              state.riwayatPermintaan[index]["Catatan"],
+                              style: TextStyle(fontSize: 17),
+                            ),
                           ),
                         ]),
                   ),

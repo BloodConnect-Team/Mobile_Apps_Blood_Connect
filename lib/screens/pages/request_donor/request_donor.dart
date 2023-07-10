@@ -23,6 +23,16 @@ class _RequestDonorState extends State<RequestDonor> {
   String jenisDonor = '';
 
   @override
+  void initState() {
+    // TODO: implement initState
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      // do something
+      Provider.of<DonorProvider>(context, listen: false)
+          .detailRiwayatPermintaan();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(

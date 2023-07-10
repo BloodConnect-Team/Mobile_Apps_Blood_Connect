@@ -104,13 +104,13 @@ class HomePageScreen extends StatelessWidget {
                   Positioned(
                     bottom: 0,
                     child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 20),
-                      height: 150,
+                      margin: EdgeInsets.all(20.0),
+                      height: 140,
                       width: MediaQuery.of(context).size.width - 40,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           image: const DecorationImage(
-                            image: AssetImage("assets/img/homegambar.png"),
+                            image: AssetImage("assets/img/gambar.png"),
                             fit: BoxFit.fitWidth,
                           ),
                           borderRadius: BorderRadius.circular(10)),

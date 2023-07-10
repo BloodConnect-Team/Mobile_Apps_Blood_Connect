@@ -48,7 +48,9 @@ dependencies:
   select_form_field: ^2.2.0
   url_launcher: ^6.1.11
   social_share: ^2.3.1
-
+  flutter_secure_storage: ^8.0.0
+  flutter_cache_manager: ^3.2.0
+  google_fonts: ^4.0.2
 
 dev_dependencies:
   flutter_test:
@@ -93,7 +95,7 @@ flutter:
   fonts:
     - family: Poppins
       fonts:
-        - asset: fonts/Poppins-SemiBold.ttf
+        - asset: fonts/Poppins-Medium.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

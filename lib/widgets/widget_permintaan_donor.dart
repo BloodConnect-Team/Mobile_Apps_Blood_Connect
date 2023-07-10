@@ -19,19 +19,21 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
     return Consumer<DonorProvider>(builder: (context, state, child) {
       return Column(
         children: [
+          SizedBox(
+            height: 20,
+          ),
           Padding(
-            padding: EdgeInsets.only(left: 150.0, top: 20),
+            padding: EdgeInsets.only(left: 20),
             child: Row(
               children: [
                 Icon(
                   Icons.location_on,
                   color: Colors.redAccent,
                 ),
-                Expanded(
-                    child: Text(
+                Text(
                   state.detailRequestClient["BDRS"],
                   style: TextStyle(fontSize: 20),
-                ))
+                )
               ],
             ),
           ),
@@ -52,7 +54,7 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
                 borderRadius: BorderRadius.circular(10.0),
                 border: Border.all(width: 1.0)),
             width: MediaQuery.of(context).size.width,
-            height: 400,
+            height: 500,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

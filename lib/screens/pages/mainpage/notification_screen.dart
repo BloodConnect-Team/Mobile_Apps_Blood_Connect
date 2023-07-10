@@ -1,5 +1,8 @@
+import 'package:blood_connect/providers/information_provider.dart';
+import 'package:blood_connect/providers/profile_provider.dart';
 import 'package:blood_connect/widgets/widget_list_notification.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
@@ -9,6 +12,17 @@ class NotificationScreen extends StatefulWidget {
 }
 
 class _NotificationScreenState extends State<NotificationScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      // do something
+      Provider.of<InformationProvider>(context, listen: false)
+          .notificationHome();
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

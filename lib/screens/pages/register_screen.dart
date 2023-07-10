@@ -5,6 +5,7 @@ import 'package:blood_connect/data/repository/repository_post.dart';
 import 'package:blood_connect/providers/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:select_form_field/select_form_field.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -19,7 +20,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final goldarController = TextEditingController();
-
+  String goldar = '';
   RepositoryPost repository = RepositoryPost();
 
   @override
@@ -59,6 +60,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
+                        fontFamily: 'poppins',
                         color: primaryColor),
                   )
                 ],
@@ -71,6 +73,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Form(
               child: Container(
                 margin: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black45),
+                    borderRadius: BorderRadius.circular(10.0)),
                 child: SizedBox(
                   width: 300,
                   child: TextFormField(
@@ -103,6 +108,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
             //Form email register
             Container(
               margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black45),
+                  borderRadius: BorderRadius.circular(10.0)),
               child: SizedBox(
                 width: 300,
                 child: TextFormField(
@@ -137,6 +145,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
             //Form Password Register
             Container(
               margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black45),
+                  borderRadius: BorderRadius.circular(10.0)),
               child: SizedBox(
                 width: 300,
                 child: TextFormField(
@@ -146,7 +157,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     hintText: "********",
                     label: const Text("Password"),
                     filled: true,
-                    border: const OutlineInputBorder(
+                    border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10))),
                     suffixIcon: IconButton(
                         onPressed: () {
@@ -188,34 +199,95 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             //Form Golongan Darah User
             Container(
-              margin: const EdgeInsets.all(10),
-              child: SizedBox(
-                width: 300,
-                child: TextFormField(
-                  controller: goldarController,
-                  decoration: InputDecoration(
-                    hintText: "Golongan Darah",
-                    label: const Text('O+'),
-                    filled: true,
+              margin:
+                  const EdgeInsets.symmetric(horizontal: 50, vertical: 10.0),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black45),
+                  borderRadius: BorderRadius.circular(10.0)),
+              child: SelectFormField(
+                onChanged: (value) => goldar = value,
+                items: [
+                  {
+                    'value': 'A+',
+                    'label': ' A+',
+                    'icon': Icon(
+                      Icons.bloodtype,
+                      color: Colors.red,
+                    ),
+                  },
+                  {
+                    'value': 'A-',
+                    'label': ' A-',
+                    'icon': Icon(
+                      Icons.bloodtype,
+                      color: Colors.red,
+                    ),
+                  },
+                  {
+                    'value': 'B+',
+                    'label': ' B+',
+                    'icon': Icon(
+                      Icons.bloodtype,
+                      color: Colors.red,
+                    ),
+                  },
+                  {
+                    'value': 'B-',
+                    'label': ' B-',
+                    'icon': Icon(
+                      Icons.bloodtype,
+                      color: Colors.red,
+                    ),
+                  },
+                  {
+                    'value': 'AB+',
+                    'label': ' AB+',
+                    'icon': Icon(
+                      Icons.bloodtype,
+                      color: Colors.red,
+                    ),
+                  },
+                  {
+                    'value': 'AB-',
+                    'label': ' AB-',
+                    'icon': Icon(
+                      Icons.bloodtype,
+                      color: Colors.red,
+                    ),
+                  },
+                  {
+                    'value': 'O+',
+                    'label': ' O+',
+                    'icon': Icon(
+                      Icons.bloodtype,
+                      color: Colors.red,
+                    ),
+                  },
+                  {
+                    'value': 'O-',
+                    'label': ' O-',
+                    'icon': Icon(
+                      Icons.bloodtype,
+                      color: Colors.red,
+                    ),
+                  },
+                ],
+                decoration: InputDecoration(
+                    label: Text("Golongan Darah"),
+                    prefixIcon: Icon(Icons.bloodtype_rounded),
+                    suffixIcon: Icon(Icons.arrow_drop_down),
                     border: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                    prefixIcon: Container(
-                      margin: const EdgeInsets.only(right: 8),
-                      decoration: const BoxDecoration(
-                        border:
-                            Border(right: BorderSide(color: Colors.black45)),
-                      ),
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 8),
-                        child: Icon(
-                          Icons.bloodtype,
-                          color: primaryColor,
-                          size: 30,
-                        ),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
                       ),
                     ),
-                  ),
+                    prefixIconColor: primaryColor),
+                icon: Icon(
+                  Icons.bloodtype_outlined,
+                  color: primaryColor,
                 ),
+                labelText: 'Golongan Darah',
               ),
             ),
             const SizedBox(
@@ -238,9 +310,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       username: nameController.text,
                       email: emailController.text,
                       password: passwordController.text,
-                      goldar: goldarController.text);
+                      goldar: goldar);
                 },
-                child: const Text('DAFTAR'),
+                child: const Text(
+                  'DAFTAR',
+                  style: TextStyle(fontFamily: 'poppins'),
+                ),
               ),
             ),
             Container(
@@ -250,7 +325,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 children: [
                   const Text(
                     "Sudah Punya Akun",
-                    style: TextStyle(color: Colors.black87),
+                    style:
+                        TextStyle(color: Colors.black87, fontFamily: 'Poppins'),
                   ),
                   TextButton(
                       onPressed: () {
@@ -258,7 +334,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       },
                       child: Text(
                         "Masuk",
-                        style: TextStyle(color: primaryColor),
+                        style: TextStyle(
+                            color: primaryColor, fontFamily: 'poppins'),
                       ))
                 ],
               ),

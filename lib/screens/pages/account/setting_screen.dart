@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:select_form_field/select_form_field.dart';
 
 class SettingScreen extends StatefulWidget {
-  const SettingScreen({super.key});
+  SettingScreen({super.key});
 
   @override
   State<SettingScreen> createState() => _SettingScreenState();
@@ -56,10 +56,28 @@ class _SettingScreenState extends State<SettingScreen> {
                 ),
               ),
             ),
+            Text(
+              Provider.of<ProfileProvider>(context).name,
+              style: TextStyle(
+                fontSize: 17,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              Provider.of<ProfileProvider>(context).goldar,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
               width: MediaQuery.of(context).size.width,
               child: TextFormField(
+                controller: usernameSetting,
                 decoration: InputDecoration(
                     hintText: 'username',
                     label: Text('Username'),
@@ -73,6 +91,7 @@ class _SettingScreenState extends State<SettingScreen> {
               margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
               width: MediaQuery.of(context).size.width,
               child: TextFormField(
+                controller: emailSetting,
                 decoration: InputDecoration(
                     labelText: 'E-mail',
                     prefixIcon: Icon(Icons.email_outlined),
@@ -199,7 +218,9 @@ class _SettingScreenState extends State<SettingScreen> {
                   onPressed: () {
                     Provider.of<ProfileProvider>(context, listen: false)
                         .updateProfile(context,
-                            
+                            id: Provider.of<ProfileProvider>(context,
+                                    listen: false)
+                                .id,
                             username: usernameSetting.text,
                             email: emailSetting.text,
                             goldar: selectDarah,

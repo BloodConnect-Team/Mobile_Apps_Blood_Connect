@@ -23,8 +23,6 @@ class NewsHomePage extends StatelessWidget {
                   // print(state.newsList[index].toString());
                 },
                 child: Card(
-                  shadowColor: Colors.grey,
-                  elevation: 15,
                   child: Container(
                     width: 250,
                     height: 250,

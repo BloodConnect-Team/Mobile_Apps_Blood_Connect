@@ -17,8 +17,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _submitDataForm = GlobalKey<FormState>();
-  TextEditingController emailController = TextEditingController(text: "komodo@gmail.com");
-  TextEditingController passwordController = TextEditingController(text: "09876");
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   bool isLogin = false;
 
   String password = '';
@@ -70,6 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
               style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.normal,
+                  fontFamily: 'Poppins',
                   color: Color(0xffFF2156)),
             ),
             const SizedBox(
@@ -195,7 +196,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       email: emailController.text,
                       password: passwordController.text);
                 },
-                child: const Text('Masuk'),
+                child: Text(
+                  'Masuk',
+                  style: TextStyle(fontFamily: 'Poppins'),
+                ),
               ),
             ),
             TextButton(
@@ -205,7 +209,8 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               child: Text(
                 'Lupa Password?',
-                style: TextStyle(fontSize: 15, color: primaryColor),
+                style: TextStyle(
+                    fontSize: 15, color: primaryColor, fontFamily: 'Poppins'),
               ),
             ),
             Container(
@@ -213,7 +218,10 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Belum punya akun?"),
+                  Text(
+                    "Belum Punya Akun?",
+                    style: TextStyle(fontFamily: 'Poppins'),
+                  ),
                   TextButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
@@ -221,7 +229,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child: Text(
                       'Daftar',
-                      style: TextStyle(color: primaryColor),
+                      style:
+                          TextStyle(fontFamily: 'Poppins', color: primaryColor),
                     ),
                   )
                 ],

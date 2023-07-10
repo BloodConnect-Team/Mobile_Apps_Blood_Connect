@@ -30,18 +30,12 @@ class WidgetListNotification extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Expanded(
-                            child: Text(
-                              state.notificationList[index]["Pesan"],
-                            ),
+                        Expanded(
+                          child: Text(
+                            state.notificationList[index]["Pesan"],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 140.0),
-                          child: Text(state.notificationList[index]["Tanggal"]),
-                        )
+                        Text(state.notificationList[index]["Tanggal"])
                       ],
                     ),
                   ],

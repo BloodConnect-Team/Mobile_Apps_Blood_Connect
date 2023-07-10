@@ -38,16 +38,25 @@ class _OnboardingOneState extends State<OnboardingOne> {
                 height: 10,
               ),
               const Text(
-                'Bantu orang Lain',
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+                'Bantu Orang Lain',
+                style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    fontFamily: 'Poppins'),
               ),
               const Text(
                 'Temukan Kebutuhan Darah ',
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+                style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    fontFamily: 'Poppins'),
               ),
               const Text(
                 'Disekitarmu',
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+                style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    fontFamily: 'Poppins'),
               ),
               const SizedBox(
                 height: 30,
@@ -85,9 +94,7 @@ class _OnboardingOneState extends State<OnboardingOne> {
                       },
                       child: const Text(
                         'Lanjut',
-                        style: TextStyle(
-                          fontSize: 15,
-                        ),
+                        style: TextStyle(fontSize: 15, fontFamily: 'Poppins'),
                       ),
                     ),
                   ),
@@ -114,7 +121,7 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: InkWell(
+      body: SingleChildScrollView(
         child: Container(
           child: Column(
             children: [
@@ -131,25 +138,34 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
               const Text(
                 'Kamu Adalah Pahlawan',
                 style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black87,
-                  fontSize: 15,
-                ),
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black87,
+                    fontSize: 15,
+                    fontFamily: 'Poppins'),
               ),
               const SizedBox(
                 height: 10,
               ),
               const Text(
                 'Jadilah Pahlawan',
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+                style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14),
               ),
               const Text(
                 'bagikan kebutuhan darah',
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+                style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14),
               ),
               const Text(
-                'untukmu,Temanmu dan orang sekitarmu',
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+                'Untukmu,Temanmu Dan Orang Sekitarmu',
+                style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    fontFamily: 'Poppins'),
               ),
               const SizedBox(
                 height: 30,
@@ -248,7 +264,8 @@ class _OnboardingTreeState extends State<OnboardingTree> {
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
-                    decorationColor: Colors.black),
+                    decorationColor: Colors.black,
+                    fontFamily: 'Poppins'),
               ),
               const SizedBox(
                 height: 40,

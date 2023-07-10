@@ -50,6 +50,7 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
           textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
         ),
+        debugShowCheckedModeBanner: false,
         // home: PageSatu(),
         home: const SplashScreen(),
 

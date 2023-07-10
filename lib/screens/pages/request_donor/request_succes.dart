@@ -1,4 +1,6 @@
 import 'package:blood_connect/color/color.dart';
+import 'package:blood_connect/screens/pages/bottomnav/bottom_navigation.dart';
+import 'package:blood_connect/screens/pages/menu/search_screen.dart';
 import 'package:blood_connect/screens/pages/request_donor/history_donor.dart';
 import 'package:flutter/material.dart';
 
@@ -37,8 +39,9 @@ class RequestSucces extends StatelessWidget {
                         child: FloatingActionButton(
                           focusColor: primaryColor,
                           onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (builder) => HistoryDonor()));
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (builder) => BottomNavigation()));
                           },
                           child: Icon(Icons.arrow_forward_outlined),
                         ),

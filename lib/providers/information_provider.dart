@@ -58,8 +58,8 @@ class InformationProvider extends ChangeNotifier {
     if (responseNewsDetail.statusCode == 200) {
       Object dataDetail = jsonDecode(responseNewsDetail.body)["data"];
       detailNews = dataDetail;
-
-      Navigator.of(context)
+      CircularProgressIndicator();
+      await Navigator.of(context)
           .push(MaterialPageRoute(builder: (builder) => DetailNews()));
       notifyListeners();
     } else {}

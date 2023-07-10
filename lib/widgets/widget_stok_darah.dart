@@ -15,6 +15,7 @@ class WidgetStokDarah extends StatelessWidget {
           crossAxisCount: 3,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
+          padding: EdgeInsets.all(20.0),
           children: [
             Container(
               width: 20,
@@ -31,13 +32,13 @@ class WidgetStokDarah extends StatelessWidget {
                   ],
                   color: Colors.white),
               child: Padding(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 35),
                 child: Column(
                   children: [
                     Text(
                       'A +',
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       state.stokDarah["A_pos"].toString(),
@@ -63,13 +64,13 @@ class WidgetStokDarah extends StatelessWidget {
                   ],
                   color: Colors.white),
               child: Padding(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 35),
                 child: Column(
                   children: [
                     Text(
                       'B +',
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       state.stokDarah["B_pos"].toString(),
@@ -95,13 +96,13 @@ class WidgetStokDarah extends StatelessWidget {
                   ],
                   color: Colors.white),
               child: Padding(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 35),
                 child: Column(
                   children: [
                     Text(
                       'O +',
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       state.stokDarah["O_pos"].toString(),
@@ -127,13 +128,13 @@ class WidgetStokDarah extends StatelessWidget {
                   ],
                   color: Colors.white),
               child: Padding(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 35),
                 child: Column(
                   children: [
                     Text(
                       'AB +',
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       state.stokDarah["AB_pos"].toString(),
@@ -159,13 +160,13 @@ class WidgetStokDarah extends StatelessWidget {
                   ],
                   color: Colors.white),
               child: Padding(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 35),
                 child: Column(
                   children: [
                     Text(
                       'A -',
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       state.stokDarah["A_neg"].toString(),
@@ -191,13 +192,13 @@ class WidgetStokDarah extends StatelessWidget {
                   ],
                   color: Colors.white),
               child: Padding(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 35),
                 child: Column(
                   children: [
                     Text(
                       'B -',
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       state.stokDarah["B_neg"].toString(),
@@ -223,13 +224,13 @@ class WidgetStokDarah extends StatelessWidget {
                   ],
                   color: Colors.white),
               child: Padding(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 35),
                 child: Column(
                   children: [
                     Text(
                       'O -',
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       state.stokDarah["O_neg"].toString(),
@@ -255,13 +256,13 @@ class WidgetStokDarah extends StatelessWidget {
                   ],
                   color: Colors.white),
               child: Padding(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 35),
                 child: Column(
                   children: [
                     Text(
                       'AB -',
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       state.stokDarah["AB_neg"].toString(),

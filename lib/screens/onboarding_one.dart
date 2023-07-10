@@ -191,15 +191,19 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
 
 //On Boarding Tree
 
-class OnboardingTree extends StatelessWidget {
+class OnboardingTree extends StatefulWidget {
   const OnboardingTree({super.key});
 
+  @override
+  State<OnboardingTree> createState() => _OnboardingTreeState();
+}
+
+class _OnboardingTreeState extends State<OnboardingTree> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.all(60),
           child: Column(
             children: [
               const SizedBox(
@@ -236,8 +240,9 @@ class OnboardingTree extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 60),
                 child: Column(
                   children: [
-                    SizedBox(
-                      width: 300,
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 30),
+                      width: MediaQuery.of(context).size.width,
                       child: OutlinedButton(
                         style: ButtonStyle(
                           side: MaterialStateProperty.all(
@@ -257,6 +262,7 @@ class OnboardingTree extends StatelessWidget {
                     ),
                     GestureDetector(
                       child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 30),
                         width: MediaQuery.of(context).size.width,
                         child: ElevatedButton(
                           style:

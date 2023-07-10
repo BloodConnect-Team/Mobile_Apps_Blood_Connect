@@ -1,4 +1,5 @@
 import 'package:blood_connect/providers/auth_provider.dart';
+import 'package:blood_connect/providers/donor_provider.dart';
 import 'package:blood_connect/providers/information_provider.dart';
 import 'package:blood_connect/providers/profile_provider.dart';
 import 'package:blood_connect/screens/onboarding_one.dart';
@@ -30,9 +31,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => InformationProvider()
             ..news()
-            ..newsDetail()
-            ..stokUdd(),
+            ..stokUdd()
+            ..listJadwalMobileUnit(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => DonorProvider()..donorReqAll(),
+        )
       ],
       child: MaterialApp(
         title: 'Blood Connection',

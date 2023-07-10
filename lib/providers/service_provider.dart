@@ -3,13 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
 class ServiceProvider extends ChangeNotifier {
-
-
-
   Future doLogin(context) async {
-
-
-
     showDialog(
         context: context,
         builder: (context) {

@@ -1,3 +1,4 @@
+import 'package:blood_connect/widgets/update.dart';
 import 'package:blood_connect/widgets/widget_stok_darah.dart';
 import 'package:flutter/material.dart';
 
@@ -59,12 +60,8 @@ class _StokDarahScreenState extends State<StokDarahScreen> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(right: 100.0, bottom: 5.0),
-                          child: Text(
-                            'Diperbaruipada : 2023-03-20',
-                            style: TextStyle(fontSize: 11, color: Colors.grey),
-                          ),
-                        ),
+                            padding: EdgeInsets.only(right: 135.0),
+                            child: Update()),
                       ],
                     )
                   ],

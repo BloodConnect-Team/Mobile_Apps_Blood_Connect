@@ -16,118 +16,129 @@ class WidgetStokDarah extends StatelessWidget {
           children: [
             Container(
               width: 50,
-              height: 70,
+              height: 50,
               child: Column(
                 children: [
                   Text(
-                    'A+',
+                    'A +',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Text(state.stokDarah["A_pos"].toString())
+                  Text(
+                    state.stokDarah["A_pos"].toString(),
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                  )
                 ],
               ),
             ),
             Container(
               width: 50,
-              height: 70,
+              height: 50,
               child: Column(
                 children: [
                   Text(
-                    'B+',
+                    'B +',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Text(state.stokDarah["B_pos"].toString())
+                  Text(
+                    state.stokDarah["B_pos"].toString(),
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                  )
                 ],
               ),
             ),
             Container(
               width: 50,
-              height: 70,
+              height: 50,
               child: Column(
                 children: [
                   Text(
-                    'O+',
+                    'O +',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Text('')
+                  Text(
+                    state.stokDarah["O_pos"].toString(),
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                  )
                 ],
               ),
             ),
             Container(
               width: 50,
-              height: 70,
+              height: 50,
               child: Column(
                 children: [
                   Text(
-                    'AB+',
+                    'AB +',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Text('')
+                  Text(
+                    state.stokDarah["AB_pos"].toString(),
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                  )
                 ],
               ),
             ),
             Container(
               width: 50,
-              height: 70,
+              height: 50,
               child: Column(
                 children: [
                   Text(
-                    'A-',
+                    'A -',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Text('')
+                  Text(
+                    state.stokDarah["A_neg"].toString(),
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                  )
                 ],
               ),
             ),
             Container(
               width: 50,
-              height: 70,
+              height: 50,
               child: Column(
                 children: [
                   Text(
-                    'B-',
+                    'B -',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Text('')
+                  Text(
+                    state.stokDarah["B_neg"].toString(),
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                  )
                 ],
               ),
             ),
             Container(
               width: 50,
-              height: 70,
+              height: 50,
               child: Column(
                 children: [
                   Text(
-                    'O-',
+                    'O -',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Text('')
+                  Text(
+                    state.stokDarah["O_neg"].toString(),
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                  )
                 ],
               ),
             ),
             Container(
               width: 50,
-              height: 70,
+              height: 50,
               child: Column(
                 children: [
                   Text(
-                    'O-',
+                    'AB -',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Text('')
-                ],
-              ),
-            ),
-            Container(
-              width: 50,
-              height: 70,
-              child: Column(
-                children: [
                   Text(
-                    'AB-',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                  ),
-                  Text('')
+                    state.stokDarah["AB_neg"].toString(),
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                  )
                 ],
               ),
             ),

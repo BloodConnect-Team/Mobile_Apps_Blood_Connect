@@ -13,27 +13,33 @@ class RequestSucces extends StatelessWidget {
           children: [
             Container(
               margin: EdgeInsets.all(30.0),
-              padding: EdgeInsets.all(20.0),
-              color: Colors.white,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20), color: Colors.white),
               child: Column(children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Image.asset('assets/icons/complete.png'),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                      'Permintaan Anda Berhasil \n diajukan ,cek Berkala untuk \n melihat status verifikasi'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: FloatingActionButton(
-                    focusColor: primaryColor,
-                    onPressed: () {},
-                    child: Icon(Icons.arrow_forward_outlined),
+                Container(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Image.asset('assets/icons/complete.png'),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                            'Permintaan Anda Berhasil \n Diajukan ,cek Berkala untuk \n Melihat status verifikasi'),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: FloatingActionButton(
+                          focusColor: primaryColor,
+                          onPressed: () {},
+                          child: Icon(Icons.arrow_forward_outlined),
+                        ),
+                      )
+                    ],
                   ),
                 )
               ]),

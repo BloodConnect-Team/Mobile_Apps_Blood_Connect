@@ -12,13 +12,13 @@ class NewsHomePage extends StatelessWidget {
       builder: (context, state, child) {
         return SizedBox(
           width: MediaQuery.of(context).size.width,
-          height: 210,
+          height: 240,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: state.newsList.length,
             itemBuilder: (context, index) {
               return GestureDetector(
-                onTap: () {
+                onTap: () async {
                   state.newsDetail(context, state.newsList[index]["id"]);
                   // print(state.newsList[index].toString());
                 },

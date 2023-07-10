@@ -42,6 +42,7 @@ class _StokDarahScreenState extends State<StokDarahScreen> {
                             Image.asset('assets/icons/icon_stock_darah.png')),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
                           'UTD PMI Kota Lhokseumawe',
@@ -52,6 +53,10 @@ class _StokDarahScreenState extends State<StokDarahScreen> {
                           'Provinsi Aceh',
                           style: TextStyle(fontSize: 14, color: Colors.black87),
                         ),
+                        Text(
+                          'Narahubung : 0821-2874-2858',
+                          style: TextStyle(fontSize: 14, color: Colors.grey),
+                        ),
                         Update(),
                       ],
                     )
@@ -60,7 +65,7 @@ class _StokDarahScreenState extends State<StokDarahScreen> {
               ],
             ),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 20),
           WidgetStokDarah(),
           Padding(
             padding: EdgeInsets.only(right: 50.0, top: 10),

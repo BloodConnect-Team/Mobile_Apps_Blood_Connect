@@ -23,6 +23,9 @@ class WidgetMobileUnit extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      SizedBox(
+                        height: 10.0,
+                      ),
                       Row(
                         children: [
                           Container(
@@ -41,15 +44,18 @@ class WidgetMobileUnit extends StatelessWidget {
                               ),
                               Text(
                                 state.jadwalMobileUnit[index]["Waktu"],
-                                style: TextStyle(fontFamily: 'Poppins'),
+                                style: TextStyle(
+                                    fontFamily: 'Poppins', color: Colors.grey),
                               ),
                               Text(
                                 'Target Donor :${state.jadwalMobileUnit[index]["Target"]}',
-                                style: TextStyle(fontFamily: 'Poppins'),
+                                style: TextStyle(
+                                    fontFamily: 'Poppins', color: Colors.grey),
                               ),
                               Text(
                                 state.jadwalMobileUnit[index]["Alamat"],
-                                style: TextStyle(fontFamily: 'Poppins'),
+                                style: TextStyle(
+                                    fontFamily: 'Poppins', color: Colors.grey),
                               ),
                             ],
                           )

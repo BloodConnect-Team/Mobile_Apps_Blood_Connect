@@ -153,21 +153,21 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
                     fontWeight: FontWeight.w400,
                     fontSize: 14),
               ),
-              const Text(
-                'bagikan kebutuhan darah',
+              Text(
+                'Bagikan Kebutuhan Darah',
                 style: TextStyle(
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w400,
                     fontSize: 14),
               ),
-              const Text(
+              Text(
                 'Untukmu,Temanmu Dan Orang Sekitarmu',
                 style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 14,
                     fontFamily: 'Poppins'),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 30,
               ),
               Row(
@@ -180,7 +180,7 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
                         color: Colors.grey,
                         borderRadius: BorderRadius.circular(30)),
                   ),
-                  const Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                  Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
                   Container(
                     height: 10,
                     width: 40,
@@ -190,7 +190,7 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
                   ),
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 180,
               ),
               Row(
@@ -201,7 +201,7 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                              builder: (builder) => const OnboardingTree()),
+                              builder: (builder) => OnboardingTree()),
                         );
                       },
                       child: const Text(

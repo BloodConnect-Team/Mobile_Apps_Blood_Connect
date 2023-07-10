@@ -28,15 +28,17 @@ class WidgetListNotification extends StatelessWidget {
                       child:
                           Image.asset('assets/icons/notificationchecklist.png'),
                     ),
-                    Column(
-                      children: [
-                        Expanded(
-                          child: Text(
+                    Container(
+                      padding: EdgeInsets.only(left: 10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
                             state.notificationList[index]["Pesan"],
                           ),
-                        ),
-                        Text(state.notificationList[index]["Tanggal"])
-                      ],
+                          Text(state.notificationList[index]["Tanggal"])
+                        ],
+                      ),
                     ),
                   ],
                 ),

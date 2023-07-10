@@ -18,7 +18,7 @@ class WidgetMobileUnit extends StatelessWidget {
                     BoxDecoration(borderRadius: BorderRadius.circular(10)),
                 margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5.0),
                 width: MediaQuery.of(context).size.width,
-                height: 100,
+                
                 child: Card(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

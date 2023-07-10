@@ -12,96 +12,92 @@ class _OnboardingOneState extends State<OnboardingOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          margin: const EdgeInsets.all(25),
-          child: Column(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 100),
-                child: SizedBox(
-                  child: Image.asset('assets/img/bro.png'),
+      body: Container(
+        margin: const EdgeInsets.all(25),
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(top: 100),
+              child: SizedBox(
+                child: Image.asset('assets/img/bro.png'),
+              ),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            const Text(
+              'Selamat Datang di Blood Connect',
+              style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontFamily: 'Poppins'),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text(
+              'Bantu Orang Lain',
+              style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                  fontFamily: 'Poppins'),
+            ),
+            const Text(
+              'Temukan Kebutuhan Darah ',
+              style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                  fontFamily: 'Poppins'),
+            ),
+            const Text(
+              'Disekitarmu',
+              style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                  fontFamily: 'Poppins'),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 10,
+                  width: 40,
+                  decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(30)),
                 ),
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              const Text(
-                'Selamat Datang di Blood Connect',
-                style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black87,
-                    fontSize: 15,
-                    fontFamily: 'Poppins'),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Text(
-                'Bantu Orang Lain',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                    fontFamily: 'Poppins'),
-              ),
-              const Text(
-                'Temukan Kebutuhan Darah ',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                    fontFamily: 'Poppins'),
-              ),
-              const Text(
-                'Disekitarmu',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                    fontFamily: 'Poppins'),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 10,
-                    width: 40,
-                    decoration: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(30)),
+                const Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                Container(
+                  height: 10,
+                  width: 20,
+                  decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(30)),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 100,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).popAndPushNamed('/OnBoardingTwo');
+                  },
+                  child: const Text(
+                    'Lanjut',
+                    style: TextStyle(fontSize: 15, fontFamily: 'Poppins'),
                   ),
-                  const Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
-                  Container(
-                    height: 10,
-                    width: 20,
-                    decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(30)),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 100,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Positioned(
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.of(context).popAndPushNamed('/OnBoardingTwo');
-                      },
-                      child: const Text(
-                        'Lanjut',
-                        style: TextStyle(fontSize: 15, fontFamily: 'Poppins'),
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );
@@ -196,19 +192,17 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Positioned(
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (builder) => const OnboardingTree()),
-                        );
-                      },
-                      child: const Text(
-                        'Lanjut',
-                        style: TextStyle(
-                          fontSize: 15,
-                        ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (builder) => const OnboardingTree()),
+                      );
+                    },
+                    child: const Text(
+                      'Lanjut',
+                      style: TextStyle(
+                        fontSize: 15,
                       ),
                     ),
                   ),

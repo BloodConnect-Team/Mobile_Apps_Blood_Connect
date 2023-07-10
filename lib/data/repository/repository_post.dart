@@ -96,7 +96,7 @@ class RepositoryPost {
     Map<String, String> requestHeaders = {
       'Content-type': 'application/json',
       'Accept': 'application/json',
-      'Authorization': "Bearer" + tokenAuth!
+      'Authorization': "Bearer" + tokenAuth
     };
 
     final _baseUrlProfile =

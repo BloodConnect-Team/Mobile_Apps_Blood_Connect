@@ -21,53 +21,51 @@ class ProfileScreen extends StatelessWidget {
               borderRadius:
                   const BorderRadius.vertical(bottom: Radius.circular(20)),
             ),
-            child: Expanded(
-              child: Column(children: [
-                SizedBox(
-                  height: 40,
+            child: Column(children: [
+              SizedBox(
+                height: 40,
+              ),
+              Text(
+                'Profile',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ClipOval(
+                child: SizedBox.fromSize(
+                  size: Size.fromRadius(55.0), // Image radius
+                  child: Image.network(
+                      Provider.of<ProfileProvider>(context).photo,
+                      fit: BoxFit.cover),
                 ),
-                Text(
-                  'Profile',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w600),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                ClipOval(
-                  child: SizedBox.fromSize(
-                    size: Size.fromRadius(55.0), // Image radius
-                    child: Image.network(
-                        Provider.of<ProfileProvider>(context).photo,
-                        fit: BoxFit.cover),
+              ),
+              Column(
+                children: [
+                  Text(
+                    Provider.of<ProfileProvider>(context).name,
+                    style: TextStyle(
+                        fontSize: 17,
+                        fontFamily: 'Poppins',
+                        color: Colors.white),
                   ),
-                ),
-                Column(
-                  children: [
-                    Text(
-                      Provider.of<ProfileProvider>(context).name,
-                      style: TextStyle(
-                          fontSize: 17,
-                          fontFamily: 'Poppins',
-                          color: Colors.white),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      Provider.of<ProfileProvider>(context).goldar,
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white),
-                    )
-                  ],
-                ),
-              ]),
-            ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    Provider.of<ProfileProvider>(context).goldar,
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
+                  )
+                ],
+              ),
+            ]),
           ),
           const SizedBox(
             height: 30,

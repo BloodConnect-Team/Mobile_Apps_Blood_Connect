@@ -36,14 +36,12 @@ class _WidgetDetailNewsState extends State<WidgetDetailNews> {
             Container(
               margin: EdgeInsets.only(left: 10.0),
               width: MediaQuery.of(context).size.width - 40,
-              child: Expanded(
-                child: Text(
-                  state.detailNews["Content"].toString(),
-                  style: TextStyle(
-                    height: 2,
-                    letterSpacing: 2,
-                    fontSize: 15,
-                  ),
+              child: Text(
+                state.detailNews["Content"].toString(),
+                style: TextStyle(
+                  height: 2,
+                  letterSpacing: 2,
+                  fontSize: 15,
                 ),
               ),
             ),

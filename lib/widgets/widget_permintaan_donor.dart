@@ -95,85 +95,83 @@ class _WidgetPermintaanDonorState extends State<WidgetPermintaanDonor> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
-                  child: Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'Nama Pasien :',
-                          style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.grey),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          state.detailRequestClient["Pasien"],
-                          style: TextStyle(fontSize: 17),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'Golongan Darah :',
-                          style: TextStyle(fontSize: 20, color: Colors.grey),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          state.detailRequestClient["GolonganDarah"],
-                          style: TextStyle(fontSize: 17),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'Jenis Donor :',
-                          style: TextStyle(fontSize: 20, color: Colors.grey),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          state.detailRequestClient["JenisDonor"],
-                          style: TextStyle(fontSize: 17, color: Colors.black),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'Kebutuhan :',
-                          style: TextStyle(fontSize: 20, color: Colors.grey),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          state.detailRequestClient["Kebutuhan"].toString(),
-                          style: TextStyle(fontSize: 17),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'Catatan',
-                          style: TextStyle(fontSize: 20, color: Colors.grey),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          state.detailRequestClient["Catatan"],
-                          style: TextStyle(fontSize: 17),
-                        ),
-                      ],
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Nama Pasien :',
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        state.detailRequestClient["Pasien"],
+                        style: TextStyle(fontSize: 17),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Golongan Darah :',
+                        style: TextStyle(fontSize: 20, color: Colors.grey),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        state.detailRequestClient["GolonganDarah"],
+                        style: TextStyle(fontSize: 17),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Jenis Donor :',
+                        style: TextStyle(fontSize: 20, color: Colors.grey),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        state.detailRequestClient["JenisDonor"],
+                        style: TextStyle(fontSize: 17, color: Colors.black),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Kebutuhan :',
+                        style: TextStyle(fontSize: 20, color: Colors.grey),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        state.detailRequestClient["Kebutuhan"].toString(),
+                        style: TextStyle(fontSize: 17),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Catatan',
+                        style: TextStyle(fontSize: 20, color: Colors.grey),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        state.detailRequestClient["Catatan"],
+                        style: TextStyle(fontSize: 17),
+                      ),
+                    ],
                   ),
                 )
               ],

@@ -1,4 +1,6 @@
+import 'package:blood_connect/providers/donor_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ButtonGoldar extends StatefulWidget {
   const ButtonGoldar({super.key});
@@ -18,8 +20,19 @@ class _ButtonGoldarState extends State<ButtonGoldar> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Provider.of<DonorProvider>(context, listen: false)
+                      .changeGoldarFilter("");
+                },
                 child: Container(
+                  padding: Provider.of<DonorProvider>(context).goldar == ""
+                      ? EdgeInsets.all(10)
+                      : EdgeInsets.all(0),
+                  decoration: Provider.of<DonorProvider>(context).goldar == ""
+                      ? BoxDecoration(
+                          color: Color.fromARGB(255, 250, 92, 92),
+                          borderRadius: BorderRadius.circular(10))
+                      : BoxDecoration(),
                   child: Text(
                     'Semua',
                     style: TextStyle(
@@ -32,8 +45,19 @@ class _ButtonGoldarState extends State<ButtonGoldar> {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Provider.of<DonorProvider>(context, listen: false)
+                      .changeGoldarFilter("A+");
+                },
                 child: Container(
+                  padding: Provider.of<DonorProvider>(context).goldar == "A+"
+                      ? EdgeInsets.all(10)
+                      : EdgeInsets.all(0),
+                  decoration: Provider.of<DonorProvider>(context).goldar == "A+"
+                      ? BoxDecoration(
+                          color: Color.fromARGB(255, 250, 92, 92),
+                          borderRadius: BorderRadius.circular(10))
+                      : BoxDecoration(),
                   child: Text(
                     'A+',
                     style: TextStyle(
@@ -46,8 +70,19 @@ class _ButtonGoldarState extends State<ButtonGoldar> {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Provider.of<DonorProvider>(context, listen: false)
+                      .changeGoldarFilter("A-");
+                },
                 child: Container(
+                  padding: Provider.of<DonorProvider>(context).goldar == "A-"
+                      ? EdgeInsets.all(10)
+                      : EdgeInsets.all(0),
+                  decoration: Provider.of<DonorProvider>(context).goldar == "A-"
+                      ? BoxDecoration(
+                          color: Color.fromARGB(255, 250, 92, 92),
+                          borderRadius: BorderRadius.circular(10))
+                      : BoxDecoration(),
                   child: Text(
                     'A-',
                     style: TextStyle(
@@ -60,8 +95,19 @@ class _ButtonGoldarState extends State<ButtonGoldar> {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Provider.of<DonorProvider>(context, listen: false)
+                      .changeGoldarFilter("B+");
+                },
                 child: Container(
+                  padding: Provider.of<DonorProvider>(context).goldar == "B+"
+                      ? EdgeInsets.all(10)
+                      : EdgeInsets.all(0),
+                  decoration: Provider.of<DonorProvider>(context).goldar == "B+"
+                      ? BoxDecoration(
+                          color: Color.fromARGB(255, 250, 92, 92),
+                          borderRadius: BorderRadius.circular(10))
+                      : BoxDecoration(),
                   child: Text(
                     'B+',
                     style: TextStyle(
@@ -74,8 +120,19 @@ class _ButtonGoldarState extends State<ButtonGoldar> {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Provider.of<DonorProvider>(context, listen: false)
+                      .changeGoldarFilter("B-");
+                },
                 child: Container(
+                  padding: Provider.of<DonorProvider>(context).goldar == "B-"
+                      ? EdgeInsets.all(10)
+                      : EdgeInsets.all(0),
+                  decoration: Provider.of<DonorProvider>(context).goldar == "B-"
+                      ? BoxDecoration(
+                          color: Color.fromARGB(255, 250, 92, 92),
+                          borderRadius: BorderRadius.circular(10))
+                      : BoxDecoration(),
                   child: Text(
                     'B-',
                     style: TextStyle(
@@ -98,8 +155,19 @@ class _ButtonGoldarState extends State<ButtonGoldar> {
             mainAxisSize: MainAxisSize.max,
             children: [
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Provider.of<DonorProvider>(context, listen: false)
+                      .changeGoldarFilter("O+");
+                },
                 child: Container(
+                  padding: Provider.of<DonorProvider>(context).goldar == "O+"
+                      ? EdgeInsets.all(10)
+                      : EdgeInsets.all(0),
+                  decoration: Provider.of<DonorProvider>(context).goldar == "O+"
+                      ? BoxDecoration(
+                          color: Color.fromARGB(255, 250, 92, 92),
+                          borderRadius: BorderRadius.circular(10))
+                      : BoxDecoration(),
                   child: Text(
                     'O +',
                     style: TextStyle(
@@ -112,8 +180,19 @@ class _ButtonGoldarState extends State<ButtonGoldar> {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Provider.of<DonorProvider>(context, listen: false)
+                      .changeGoldarFilter("O-");
+                },
                 child: Container(
+                  padding: Provider.of<DonorProvider>(context).goldar == "O-"
+                      ? EdgeInsets.all(10)
+                      : EdgeInsets.all(0),
+                  decoration: Provider.of<DonorProvider>(context).goldar == "O-"
+                      ? BoxDecoration(
+                          color: Color.fromARGB(255, 250, 92, 92),
+                          borderRadius: BorderRadius.circular(10))
+                      : BoxDecoration(),
                   child: Text(
                     'O -',
                     style: TextStyle(
@@ -126,8 +205,20 @@ class _ButtonGoldarState extends State<ButtonGoldar> {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Provider.of<DonorProvider>(context, listen: false)
+                      .changeGoldarFilter("AB+");
+                },
                 child: Container(
+                  padding: Provider.of<DonorProvider>(context).goldar == "AB+"
+                      ? EdgeInsets.all(10)
+                      : EdgeInsets.all(0),
+                  decoration:
+                      Provider.of<DonorProvider>(context).goldar == "AB+"
+                          ? BoxDecoration(
+                              color: Color.fromARGB(255, 250, 92, 92),
+                              borderRadius: BorderRadius.circular(10))
+                          : BoxDecoration(),
                   child: Text(
                     'AB+',
                     style: TextStyle(
@@ -140,8 +231,20 @@ class _ButtonGoldarState extends State<ButtonGoldar> {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Provider.of<DonorProvider>(context, listen: false)
+                      .changeGoldarFilter("AB-");
+                },
                 child: Container(
+                  padding: Provider.of<DonorProvider>(context).goldar == "AB-"
+                      ? EdgeInsets.all(10)
+                      : EdgeInsets.all(0),
+                  decoration:
+                      Provider.of<DonorProvider>(context).goldar == "AB-"
+                          ? BoxDecoration(
+                              color: Color.fromARGB(255, 250, 92, 92),
+                              borderRadius: BorderRadius.circular(10))
+                          : BoxDecoration(),
                   child: Text(
                     'AB-',
                     style: TextStyle(

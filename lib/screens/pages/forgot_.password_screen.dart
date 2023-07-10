@@ -95,6 +95,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
+                  fontFamily: 'Poppins',
                   color: Color(0xffFF2156)),
             ),
             const SizedBox(
@@ -143,12 +144,14 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               height: 30,
             ),
             const Text(
-              "Jika Kamu Lupa dengan Password Kamu",
-              style: TextStyle(fontSize: 15, color: Colors.black54),
+              "Jika kamu lupa dengan password kamu",
+              style: TextStyle(
+                  fontSize: 12, color: Colors.black54, fontFamily: 'poppins'),
             ),
             const Text(
               "Silahkan massukkan alamat email anda",
-              style: TextStyle(fontSize: 15, color: Colors.black54),
+              style: TextStyle(
+                  fontSize: 12, color: Colors.black54, fontFamily: 'Poppins'),
             ),
             const SizedBox(
               height: 50,
@@ -174,9 +177,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   },
                   child: const Text(
                     'Kirim',
-                    style: TextStyle(
-                      fontSize: 15,
-                    ),
+                    style: TextStyle(fontSize: 15, fontFamily: 'Poppins'),
                   ),
                 ),
               ),

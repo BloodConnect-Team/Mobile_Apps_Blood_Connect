@@ -1,10 +1,12 @@
 import 'package:blood_connect/color/color.dart';
+import 'package:blood_connect/providers/profile_provider.dart';
 import 'package:blood_connect/screens/pages/home_page_screen.dart';
 import 'package:blood_connect/screens/pages/menu/blood_screen.dart';
 import 'package:blood_connect/screens/pages/menu/profile_screen.dart';
 import 'package:blood_connect/screens/pages/menu/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:provider/provider.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -27,6 +29,16 @@ class _BottomNavigationState extends State<BottomNavigation> {
     setState(() {
       _selectedBottom = index;
     });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      // do something
+      Provider.of<ProfileProvider>(context, listen: false).getProfile();
+    });
+    super.initState();
   }
 
   @override

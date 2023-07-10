@@ -8,6 +8,7 @@ import 'package:blood_connect/screens/pages/login_screen.dart';
 import 'package:blood_connect/screens/pages/register_screen.dart';
 import 'package:blood_connect/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -32,10 +33,14 @@ class MyApp extends StatelessWidget {
           create: (context) => InformationProvider()
             ..news()
             ..stokUdd()
+            ..notificationHome()
             ..listJadwalMobileUnit(),
         ),
         ChangeNotifierProvider(
-          create: (context) => DonorProvider()..donorReqAll(),
+          create: (context) => DonorProvider()
+            ..donorReqAll()
+            ..getBdrs()
+            ..detailRiwayatPermintaan(),
         )
       ],
       child: MaterialApp(
@@ -43,6 +48,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.red,
           visualDensity: VisualDensity.adaptivePlatformDensity,
+          textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
         ),
         // home: PageSatu(),
         home: const SplashScreen(),

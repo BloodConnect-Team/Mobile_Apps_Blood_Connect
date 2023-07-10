@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../widgets/widget_permintaan_donor.dart';
+
 class PermintaanDetailDonor extends StatefulWidget {
   const PermintaanDetailDonor({super.key});
 
@@ -26,46 +28,8 @@ class _PermintaanDetailDonorState extends State<PermintaanDetailDonor> {
         ),
         backgroundColor: Colors.white,
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(color: Colors.grey[400]),
-            width: MediaQuery.of(context).size.width,
-            height: 300,
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 30,
-                  ),
-                  child: Row(
-                    children: [
-                      ClipOval(
-                        child: SizedBox.fromSize(
-                          size: Size.fromRadius(25.0), // Image radius
-                          child: Image.asset('assets/img/news.png',
-                              fit: BoxFit.cover),
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Fajar Rivaldi Chan"),
-                          Text("22 Maret 2023")
-                        ],
-                      )
-                    ],
-                  ),
-                )
-              ],
-            ),
-          )
-        ],
+      body: SingleChildScrollView(
+        child: WidgetPermintaanDonor(),
       ),
     );
   }

@@ -11,7 +11,7 @@ class Update extends StatelessWidget {
     return Consumer<InformationProvider>(builder: (context, state, child) {
       return Text(
         state.stokDarah["Update"].toString(),
-        style: TextStyle(fontSize: 11, color: Colors.grey),
+        style: TextStyle(fontSize: 15, color: Colors.grey),
       );
     });
   }

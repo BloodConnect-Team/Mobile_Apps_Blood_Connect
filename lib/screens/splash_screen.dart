@@ -64,11 +64,13 @@ class _SplashScreenState extends State<SplashScreen>
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
-        height: double.maxFinite,
         decoration: BoxDecoration(color: primaryColor),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 150.0,
+            ),
             Center(
               child: SizeTransition(
                 sizeFactor: _animation,
@@ -85,10 +87,12 @@ class _SplashScreenState extends State<SplashScreen>
               style: TextStyle(
                   fontFamily: 'Poppins', fontSize: 25, color: Colors.white),
             ),
-            // Align(
-            //   alignment: FractionalOffset.bottomCenter,
-            //   child: Image.asset('assets/img/style_splash.png'),
-            // ),
+            Expanded(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Image.asset('assets/img/style_splash.png'),
+              ),
+            ),
           ],
         ),
       ),

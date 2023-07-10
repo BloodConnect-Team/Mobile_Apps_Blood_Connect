@@ -1,7 +1,9 @@
 import 'package:blood_connect/color/color.dart';
+import 'package:blood_connect/providers/donor_provider.dart';
 import 'package:blood_connect/widgets/button_goldar.dart';
 import 'package:blood_connect/widgets/widget_find_donor.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -11,7 +13,6 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  var _clearSearch = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,17 +46,14 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: SizedBox(
                   height: 50,
                   child: TextField(
-                    controller: _clearSearch,
+                    onChanged: (value) {
+                      Provider.of<DonorProvider>(context, listen: false)
+                          .searchDetailRequest(keyword: value);
+                    },
                     decoration: InputDecoration(
                       fillColor: Colors.white,
                       filled: true,
                       prefixIcon: Icon(Icons.search),
-                      suffixIcon: IconButton(
-                        icon: Icon(Icons.clear),
-                        onPressed: () {
-                          _clearSearch.clear();
-                        },
-                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
@@ -70,7 +68,7 @@ class _SearchScreenState extends State<SearchScreen> {
               const SizedBox(
                 height: 20,
               ),
-              const ButtonGoldar(),
+              ButtonGoldar(),
             ],
           ),
         ),
